@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AiTechs_LVR · Best AI Tools 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0e0c0a;
+  --paper:#f5f0e8;
+  --cream:#ede8dc;
+  --warm:#d4c9b0;
+  --accent-r:#e63946;
+  --accent-o:#f4a261;
+  --accent-g:#2a9d8f;
+  --accent-b:#457b9d;
+  --accent-p:#7b2d8b;
+  --accent-y:#e9c46a;
+  --accent-t:#06d6a0;
+  --accent-c:#118ab2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:999;opacity:.5;
+}
+
+/* ── HEADER ── */
+header{
+  background:var(--ink);
+  color:var(--paper);
+  padding:80px 40px 60px;
+  position:relative;overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;
+  top:-60px;right:-80px;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,0.3),transparent 70%);
+}
+header::after{
+  content:'';position:absolute;
+  bottom:-80px;left:10%;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(42,157,143,0.2),transparent 70%);
+}
+.header-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;}
+.header-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--accent-o);margin-bottom:20px;
+}
+header h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,10vw,140px);
+  line-height:.9;letter-spacing:2px;
+  margin-bottom:24px;
+}
+header h1 em{color:var(--accent-r);font-style:normal;}
+.header-meta{
+  display:flex;gap:32px;flex-wrap:wrap;align-items:center;
+  font-family:'DM Mono',monospace;font-size:12px;
+  color:rgba(245,240,232,0.5);
+}
+.header-badge{
+  background:var(--accent-r);color:#fff;
+  padding:6px 16px;border-radius:2px;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;
+  font-weight:500;
+}
+
+/* ── FILTER TABS ── */
+.filter-bar{
+  background:var(--cream);
+  border-bottom:2px solid var(--ink);
+  padding:0 40px;
+  position:sticky;top:0;z-index:100;
+}
+.filter-inner{
+  max-width:1400px;margin:0 auto;
+  display:flex;gap:0;overflow-x:auto;
+  scrollbar-width:none;
+}
+.filter-inner::-webkit-scrollbar{display:none;}
+.filter-btn{
+  padding:16px 24px;
+  border:none;background:transparent;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;color:rgba(14,12,10,0.45);
+  border-bottom:3px solid transparent;
+  margin-bottom:-2px;
+  transition:all .2s;white-space:nowrap;
+}
+.filter-btn:hover{color:var(--ink);}
+.filter-btn.active{color:var(--ink);border-bottom-color:var(--accent-r);}
+
+/* ── MAIN GRID ── */
+main{max-width:1400px;margin:0 auto;padding:60px 40px;}
+
+/* ── CATEGORY SECTION ── */
+.category-section{
+  margin-bottom:80px;
+  opacity:0;transform:translateY(32px);
+  transition:opacity .7s,transform .7s;
+}
+.category-section.visible{opacity:1;transform:translateY(0);}
+
+.cat-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:32px;padding-bottom:16px;
+  border-bottom:2px solid var(--ink);
+  flex-wrap:wrap;gap:12px;
+}
+.cat-title-group{}
+.cat-eyebrow{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:4px;
+}
+.cat-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,5vw,52px);
+  letter-spacing:1px;line-height:1;
+}
+.cat-count{
+  font-family:'DM Mono',monospace;font-size:11px;
+  color:rgba(14,12,10,0.4);letter-spacing:1px;
+}
+.cat-winner{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 16px;
+  border:1.5px solid var(--ink);
+  border-radius:2px;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;
+}
+.cat-winner-label{color:rgba(14,12,10,0.5);}
+.cat-winner-name{font-weight:500;}
+
+/* ── TOOL CARDS GRID ── */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+}
+
+/* ── TOOL CARD ── */
+.tool-card{
+  background:#fff;
+  border:1.5px solid rgba(14,12,10,0.12);
+  border-radius:4px;
+  overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  cursor:default;
+  display:flex;flex-direction:column;
+}
+.tool-card:hover{
+  transform:translateY(-5px) rotate(-0.3deg);
+  box-shadow:6px 8px 0 var(--ink);
+  border-color:var(--ink);
+}
+.tool-card.winner{
+  border-width:2.5px;
+}
+
+/* COLOR ACCENTS per category */
+.cat-chatbots .tool-card.winner{border-color:var(--accent-r);}
+.cat-chatbots .tool-card.winner .card-top{background:var(--accent-r);}
+.cat-image .tool-card.winner{border-color:var(--accent-p);}
+.cat-image .tool-card.winner .card-top{background:var(--accent-p);}
+.cat-coding .tool-card.winner{border-color:var(--accent-b);}
+.cat-coding .tool-card.winner .card-top{background:var(--accent-b);}
+.cat-video .tool-card.winner{border-color:var(--accent-g);}
+.cat-video .tool-card.winner .card-top{background:var(--accent-g);}
+.cat-writing .tool-card.winner{border-color:var(--accent-o);}
+.cat-writing .tool-card.winner .card-top{background:var(--accent-o);}
+.cat-research .tool-card.winner{border-color:var(--accent-c);}
+.cat-research .tool-card.winner .card-top{background:var(--accent-c);}
+.cat-audio .tool-card.winner{border-color:var(--accent-y);}
+.cat-audio .tool-card.winner .card-top{background:#c0873a;}
+.cat-productivity .tool-card.winner{border-color:var(--accent-t);}
+.cat-productivity .tool-card.winner .card-top{background:var(--accent-t);}
+.cat-design .tool-card.winner{border-color:#8338ec;}
+.cat-design .tool-card.winner .card-top{background:#8338ec;}
+.cat-agents .tool-card.winner{border-color:#ef233c;}
+.cat-agents .tool-card.winner .card-top{background:#ef233c;}
+
+.card-top{
+  padding:20px 20px 16px;
+  background:var(--cream);
+  border-bottom:1.5px solid rgba(14,12,10,0.08);
+  display:flex;align-items:flex-start;gap:14px;
+}
+.tool-card.winner .card-top{color:#fff;}
+
+.card-emoji{
+  font-size:28px;line-height:1;flex-shrink:0;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+.card-name-group{}
+.card-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:.5px;line-height:1;
+  margin-bottom:2px;
+}
+.tool-card.winner .card-name{color:#fff;}
+.card-maker{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:1px;opacity:.6;
+}
+
+.card-body{
+  padding:16px 20px 20px;
+  flex:1;display:flex;flex-direction:column;gap:12px;
+}
+.card-desc{
+  font-size:13px;line-height:1.65;
+  color:rgba(14,12,10,0.7);
+  flex:1;
+}
+.card-best-for{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:1px;text-transform:uppercase;
+  color:rgba(14,12,10,0.4);
+  margin-bottom:2px;
+}
+.card-use{
+  font-size:12.5px;font-weight:500;
+  color:var(--ink);
+}
+
+.card-footer{
+  padding:12px 20px;
+  border-top:1px solid rgba(14,12,10,0.07);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.price-tag{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:3px 10px;border-radius:2px;
+  text-transform:uppercase;
+}
+.price-free{background:rgba(42,157,143,0.12);color:var(--accent-g);}
+.price-freemium{background:rgba(69,123,157,0.12);color:var(--accent-b);}
+.price-paid{background:rgba(230,57,70,0.1);color:var(--accent-r);}
+
+.winner-badge{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);
+  padding:3px 10px;border-radius:2px;
+}
+
+/* ── STATS STRIP ── */
+.stats-strip{
+  background:var(--ink);color:var(--paper);
+  padding:40px;margin-bottom:60px;
+  border-radius:4px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:32px;text-align:center;
+}
+.stat-item .n{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;letter-spacing:1px;
+  color:var(--accent-o);line-height:1;
+}
+.stat-item .l{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
+  color:rgba(245,240,232,0.45);
+  margin-top:4px;
+}
+
+/* ── SCROLL REVEAL ── */
+@keyframes fadeSlideUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:var(--paper);
+  padding:48px 40px;text-align:center;
+}
+footer .logo{
+  font-family:'Bebas Neue',sans-serif;font-size:36px;
+  color:var(--accent-o);letter-spacing:2px;margin-bottom:8px;
+}
+footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.4);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  header{padding:60px 24px 48px;}
+  main{padding:40px 24px;}
+  .filter-bar{padding:0 24px;}
+  .tools-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow">AiTechs_LVR · Complete Reference Guide</div>
+    <h1>BEST AI<br/><em>TOOLS</em><br/>2026</h1>
+    <div class="header-meta">
+      <span class="header-badge">Updated May 2026</span>
+      <span>10 Categories</span>
+      <span>50+ Tools Reviewed</span>
+      <span>Best Per Category Highlighted</span>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCat('all',this)">All</button>
+    <button class="filter-btn" onclick="filterCat('cat-chatbots',this)">🤖 Chatbots</button>
+    <button class="filter-btn" onclick="filterCat('cat-coding',this)">💻 Coding</button>
+    <button class="filter-btn" onclick="filterCat('cat-image',this)">🎨 Image</button>
+    <button class="filter-btn" onclick="filterCat('cat-video',this)">🎬 Video</button>
+    <button class="filter-btn" onclick="filterCat('cat-writing',this)">✍️ Writing</button>
+    <button class="filter-btn" onclick="filterCat('cat-research',this)">🔬 Research</button>
+    <button class="filter-btn" onclick="filterCat('cat-audio',this)">🎵 Audio</button>
+    <button class="filter-btn" onclick="filterCat('cat-productivity',this)">⚡ Productivity</button>
+    <button class="filter-btn" onclick="filterCat('cat-design',this)">🖼️ Design</button>
+    <button class="filter-btn" onclick="filterCat('cat-agents',this)">🕸️ Agents</button>
+  </div>
+</div>
+
+<main>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="n">4,000+</div><div class="l">AI Tools Exist</div></div>
+  <div class="stat-item"><div class="n">50+</div><div class="l">Reviewed Here</div></div>
+  <div class="stat-item"><div class="n">10</div><div class="l">Categories</div></div>
+  <div class="stat-item"><div class="n">$142K</div><div class="l">Avg AI Eng Salary</div></div>
+  <div class="stat-item"><div class="n">20%</div><div class="l">Job Growth (BLS)</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  1. AI CHATBOTS & ASSISTANTS           -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-chatbots" id="cat-chatbots">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-r)">Category 01</div>
+      <div class="cat-title">AI Chatbots &amp; Assistants</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Claude (Writing) · ChatGPT (Versatility)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🟠</div><div class="card-name-group"><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Best for nuanced writing, complex reasoning, long documents (200K token context), and coding. Produces human-quality prose, avoids hallucinations more consistently than peers.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Writing · Code · Long docs · Deep analysis</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Writing</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🟢</div><div class="card-name-group"><div class="card-name">ChatGPT</div><div class="card-maker">OpenAI · GPT-5.4</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Most versatile all-rounder. Handles text, images, voice, code execution, web browsing, and file analysis. GPT-5.4 integrates reasoning by default — no separate "o-series" mode.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Everything · Brainstorming · Image gen · Plugins</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Plus</span><span class="winner-badge">★ Most Versatile</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🔵</div><div class="card-name-group"><div class="card-name">Gemini</div><div class="card-maker">Google · Gemini 3.1 Pro</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Google's flagship model with deep integration into Workspace (Docs, Sheets, Gmail). Best for research synthesis, multimodal tasks, and users already in the Google ecosystem.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Research · Google Workspace · Multimodal</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Advanced</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚫</div><div class="card-name-group"><div class="card-name">Grok</div><div class="card-maker">xAI · Grok 3</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">X/Twitter-integrated AI with live web access and deep reasoning. Excels at fact-checking real-time events, tech analysis, and users who want "less fluff, more thinking."</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Fact-checking · Real-time · Tech power users</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · X Premium+</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🦙</div><div class="card-name-group"><div class="card-name">Meta Spark</div><div class="card-maker">Meta · Open Source</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Meta's new open-source model (successor to Llama). Genuinely competitive free option. Run it locally or via API. No usage fees, full control. Strong for privacy-conscious deployments.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Privacy · Self-hosted · Free · Research</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  2. AI CODING TOOLS                    -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-coding" id="cat-coding">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-b)">Category 02</div>
+      <div class="cat-title">AI Coding Tools</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Cursor 3 · Claude Code</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🖱️</div><div class="card-name-group"><div class="card-name">Cursor 3</div><div class="card-maker">Anysphere</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI-native IDE rebuilt around an Agents Window that runs parallel coding fleets. Handles full features end-to-end, not just autocomplete. Saves developers 8–12 hours per week in testing.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Full-stack development · Large codebases · Agent coding</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best IDE</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">⌨️</div><div class="card-name-group"><div class="card-name">Claude Code</div><div class="card-maker">Anthropic</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Command-line agentic coding tool. Understands entire codebases, fixes bugs autonomously, writes tests, and refactors. Ranked #1 for code generation quality by multiple 2026 benchmarks.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Autonomous coding · CLI workflows · Refactoring</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">Claude Max $100/mo</span><span class="winner-badge">★ Best Code Quality</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🐙</div><div class="card-name-group"><div class="card-name">GitHub Copilot</div><div class="card-maker">Microsoft + OpenAI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Most widely adopted AI coding assistant. Now powered by GPT-5.4 Codex. Free tier is genuinely useful. Best integration with VS Code and GitHub workflows. Cowork powers Copilot Cowork in M365.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">VS Code users · GitHub workflows · Teams</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free tier · $10/mo Pro</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🚀</div><div class="card-name-group"><div class="card-name">Lovable</div><div class="card-maker">Lovable AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Build full web apps from plain English prompts. AI writes all the code, sets up the database, and deploys — no coding needed. Best for founders and product teams shipping MVPs fast.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">No-code app building · MVPs · Founders</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">DeepSeek V4</div><div class="card-maker">DeepSeek</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Surprisingly capable free model — genuinely competitive with paid options for coding tasks. Open-source, cheap to self-host. Strong choice when cost matters most.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Free coding · Self-hosted · Budget deployments</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  3. AI IMAGE GENERATION               -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-image" id="cat-image">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-p)">Category 03</div>
+      <div class="cat-title">AI Image Generation</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Midjourney · Ideogram (text-in-image)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🎨</div><div class="card-name-group"><div class="card-name">Midjourney</div><div class="card-maker">Midjourney Inc.</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Gold standard for artistic, photorealistic, and editorial image quality. Unmatched aesthetic output. Preferred by designers, advertisers, and creative directors. Discord + web interface.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Art · Editorial · Advertising · Creative direction</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">From $10/mo</span><span class="winner-badge">★ Best Quality</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🔤</div><div class="card-name-group"><div class="card-name">Ideogram</div><div class="card-maker">Ideogram AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Gold standard for text inside images — accurate, stylized typography baked into generated visuals. Ideal for social media graphics, posters, and marketing assets where text must be readable.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Text-in-image · Posters · Social assets · Logos</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $8/mo</span><span class="winner-badge">★ Best Text-in-Image</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌊</div><div class="card-name-group"><div class="card-name">Stable Diffusion</div><div class="card-maker">Stability AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Open-source, run locally or in the cloud. Fully customizable with LoRA fine-tunes and community models. Best for power users who want control and no content restrictions.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Custom models · Privacy · Developer control</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">✨</div><div class="card-name-group"><div class="card-name">Adobe Firefly</div><div class="card-maker">Adobe</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Commercially safe image generation trained on licensed Adobe Stock. Tight integration with Photoshop and Illustrator. Best for professionals needing IP-safe assets in Creative Cloud workflows.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Commercial use · Adobe CC users · IP safety</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · CC subscription</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎭</div><div class="card-name-group"><div class="card-name">DALL·E 3</div><div class="card-maker">OpenAI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Built into ChatGPT — easiest way to generate images via conversation. Strong at following complex prompts. Best for users who want image generation inside their existing ChatGPT workflow.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">ChatGPT users · Prompt-faithful · Quick gen</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Included in ChatGPT Plus</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  4. AI VIDEO GENERATION               -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-video" id="cat-video">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-g)">Category 04</div>
+      <div class="cat-title">AI Video Generation</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Synthesia (Business) · Veo (Realism)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🎥</div><div class="card-name-group"><div class="card-name">Synthesia</div><div class="card-maker">Synthesia</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Turn scripts and documents into professional business videos with 240+ AI avatars in 160+ languages. Trusted by 50,000+ teams. Now includes Video Agents for customer-facing automation.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Business videos · Training · Multilingual · Avatars</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">From $29/mo</span><span class="winner-badge">★ Best Business Video</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🌀</div><div class="card-name-group"><div class="card-name">Veo</div><div class="card-maker">Google DeepMind</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Google's text-to-video model producing cinematic, physically realistic video clips. Supports image-to-video and prompt-guided camera movement. Integrated with Gemini Ultra.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Realistic video · Cinematic clips · Creative direction</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Gemini Ultra plan</span><span class="winner-badge">★ Most Realistic</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">Higgsfield</div><div class="card-maker">Higgsfield AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">All-in-one creative platform: unlimited image generation + video creation + reference image reuse. Massive community catalogue for inspiration. Constantly adding new models.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Creative agencies · Short films · Social content</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">From $9/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎞️</div><div class="card-name-group"><div class="card-name">HeyGen</div><div class="card-maker">HeyGen</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Best AI video translation and avatar tool. Dubbed videos with accurate lip-sync in 40+ languages. Popular for content localization, marketing videos, and personal AI avatar creation.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Video translation · Lip-sync dubbing · Avatars</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $24/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎬</div><div class="card-name-group"><div class="card-name">Runway Gen-4</div><div class="card-maker">Runway</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Professional AI video editing and generation suite. Multi-modal video-to-video, inpainting, motion brush controls. Standard tool in Hollywood post-production workflows.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Professional editing · VFX · Post-production</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $12/mo</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  5. AI WRITING TOOLS                   -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-writing" id="cat-writing">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-o)">Category 05</div>
+      <div class="cat-title">AI Writing Tools</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Claude · Grammarly (editing)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🟠</div><div class="card-name-group"><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Widely agreed to produce the best long-form writing of any AI — doesn't over-explain, avoids filler, sounds like a competent human. Best for drafting, editing, and creative writing projects.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Long-form · Blogs · Reports · Creative writing</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Writing AI</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">✅</div><div class="card-name-group"><div class="card-name">Grammarly</div><div class="card-maker">Grammarly</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI writing assistant that catches grammar, tone, structure, and clarity issues in real-time. Works across browser, docs, and email. Best editing overlay for professionals who write daily.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Editing · Tone adjustment · Email · Daily writing</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $12/mo Premium</span><span class="winner-badge">★ Best Editing</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📊</div><div class="card-name-group"><div class="card-name">Gamma</div><div class="card-maker">Gamma App</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Converts notes, outlines, or prompts into beautiful presentations, documents, and webpages in seconds. Efficiency-lovers dream — great for turning rough ideas into polished deliverables instantly.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Presentations · Docs · Webpages from notes</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $8/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">✍️</div><div class="card-name-group"><div class="card-name">Jasper</div><div class="card-maker">Jasper AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Enterprise content platform for marketing teams. Brand voice training, team collaboration, templates for ads, blogs, and emails. Integrated with Surfer SEO for optimized content.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Marketing teams · Brand content · SEO writing</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">From $39/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📝</div><div class="card-name-group"><div class="card-name">Writer</div><div class="card-maker">Writer</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Enterprise AI writing platform with deep brand voice customization, compliance controls, and team-wide style guides. Popular in regulated industries where tone consistency matters.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Enterprise brand voice · Compliance · Teams</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">Enterprise pricing</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  6. AI RESEARCH TOOLS                  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-research" id="cat-research">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-c)">Category 06</div>
+      <div class="cat-title">AI Research Tools</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Perplexity · NotebookLM (your docs)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🔍</div><div class="card-name-group"><div class="card-name">Perplexity</div><div class="card-maker">Perplexity AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Answer engine that reads the web and gives you a single cited summary instead of a link list. Moved to subscription-first in 2026, dropped ads. Comet Assistant handles multi-step workflows. Galaxy S26 integration.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Quick research · Fact-checking · Due diligence</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Web Research</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">📓</div><div class="card-name-group"><div class="card-name">NotebookLM</div><div class="card-maker">Google</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Ground an AI entirely in your own documents (PDFs, websites, audio). Zero hallucination about outside topics. Can turn your documents into a podcast-style audio summary. Completely free, 50 docs/project.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Your own docs · Study · Internal research</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">100% Free</span><span class="winner-badge">★ Best Doc Research</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🔬</div><div class="card-name-group"><div class="card-name">Consensus</div><div class="card-maker">Consensus</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Searches millions of peer-reviewed academic papers to give evidence-based answers. Shows a "Consensus Meter" — the scientific community's aggregate stance on a question. Essential for academic research.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Academic research · Science · Evidence-based answers</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $9/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌐</div><div class="card-name-group"><div class="card-name">Gemini Deep Research</div><div class="card-maker">Google</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Autonomous multi-step web browsing and synthesis. Uploads your own documents for context. Produces comprehensive research reports across dozens of sources, with citations. Google's secret weapon.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Deep research reports · Competitive analysis</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Gemini Advanced plan</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🧠</div><div class="card-name-group"><div class="card-name">Manus</div><div class="card-maker">Manus AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI agent that browses the web, fills forms, and completes multi-step online tasks. Operates like a digital worker at a real desktop — navigates multiple websites, manipulates images, extracts data.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Deep research · Agentic web tasks · Data extraction</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">From $39/mo</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  7. AI AUDIO & MUSIC TOOLS             -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-audio" id="cat-audio">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:#c0873a">Category 07</div>
+      <div class="cat-title">AI Audio &amp; Music</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">ElevenLabs (voice) · Suno (music)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🎙️</div><div class="card-name-group"><div class="card-name">ElevenLabs</div><div class="card-maker">ElevenLabs</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Most realistic AI voices from text — indistinguishable from humans in many tests. Voice cloning with high accuracy. Voice Agents for real-time conversational bots. Used by audiobooks, YouTube, call centers.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Voiceovers · Audiobooks · Voice cloning · TTS</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $5–$99/mo</span><span class="winner-badge">★ Best Voice AI</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🎵</div><div class="card-name-group"><div class="card-name">Suno v4.5</div><div class="card-maker">Suno AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Generate full songs — vocals, instruments, lyrics — from a single text prompt. Smart genre mixing, customizable vocals, editable lyrics, full control over track sections. Pro unlocks stems and commercial use.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Full song gen · Social media music · Creativity</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $10/mo Pro</span><span class="winner-badge">★ Best Music Gen</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎸</div><div class="card-name-group"><div class="card-name">Mureka AI</div><div class="card-maker">Mureka</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Turn your lyrics, reference tracks, or melodies into fully produced songs with polished vocals and stems. Virtual songwriting partner that learns your taste and lowers the barrier to music production.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Lyricists · Indie artists · Brand music</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎤</div><div class="card-name-group"><div class="card-name">Whisper</div><div class="card-maker">OpenAI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Best open-source speech-to-text transcription model. Handles accents, background noise, and 100+ languages. Run locally for free. Backbone of countless transcription and voice-note apps.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Transcription · Subtitles · Voice notes · Free</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎹</div><div class="card-name-group"><div class="card-name">Udio</div><div class="card-maker">Udio AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Competitor to Suno focused on higher production quality and more controllable outputs. Supports inpainting (edit specific sections of a song), custom genres, and stem downloads.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">High-quality music · Production control · Stems</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $10/mo</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  8. AI PRODUCTIVITY & AUTOMATION       -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-productivity" id="cat-productivity">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:var(--accent-t)">Category 08</div>
+      <div class="cat-title">Productivity &amp; Automation</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Zapier (automation) · Fathom (meetings)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">Zapier</div><div class="card-maker">Zapier</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI orchestration layer connecting 8,000+ apps. Copilot builds entire workflows from natural language. Zapier Agents are AI teammates that handle multi-step tasks autonomously across your whole tech stack.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Workflow automation · App integrations · Teams</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · From $19/mo</span><span class="winner-badge">★ Best Automation</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">📋</div><div class="card-name-group"><div class="card-name">Fathom</div><div class="card-maker">Fathom AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Records meetings (Zoom, Meet, Teams), transcribes, and creates AI summaries with action items. Joins automatically, requires zero setup per meeting. Frees you to be present instead of taking notes.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Meeting notes · Action items · Async teams</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $19/mo Team</span><span class="winner-badge">★ Best Meeting AI</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📅</div><div class="card-name-group"><div class="card-name">Motion</div><div class="card-maker">Motion</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI project management that automatically schedules your tasks based on deadlines and priorities. Learns your calendar and rearranges work when things shift. Eliminates manual scheduling.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Task scheduling · Calendar management · Focus</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">$19/mo individual</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📦</div><div class="card-name-group"><div class="card-name">ClickUp AI</div><div class="card-maker">ClickUp</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Full project management platform with Autopilot Agents that handle recurring work. Brain Max connects to external apps (Dropbox, SharePoint) and answers questions across your entire tech stack.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Project management · Teams · Cross-app queries</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · From $7/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🖥️</div><div class="card-name-group"><div class="card-name">Claude Cowork</div><div class="card-maker">Anthropic</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Desktop AI that operates on your actual local files and folders. No copy-pasting into chat — point it at a folder and it works. GA on macOS and Windows. Also powers Copilot Cowork inside Microsoft 365.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Local files · Desktop automation · Documents</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">Claude Max $100/mo</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  9. AI DESIGN TOOLS                    -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-design" id="cat-design">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:#8338ec">Category 09</div>
+      <div class="cat-title">AI Design Tools</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Figma AI · Adobe Firefly</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🎯</div><div class="card-name-group"><div class="card-name">Figma AI</div><div class="card-maker">Figma</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">AI features built directly into the world's leading UI design tool. Auto-generates layouts from prompts, rewrites copy, removes backgrounds, and suggests component variants. Indispensable for product designers.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">UI/UX design · Product teams · Prototyping</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $15/mo Pro</span><span class="winner-badge">★ Best UI Design</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">✨</div><div class="card-name-group"><div class="card-name">Google Stitch</div><div class="card-maker">Google Labs</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Google's new AI UI generator that creates complete app interfaces from text descriptions. Free to use. Exports clean code. Rapidly closing the gap between idea and working prototype for developers.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">App UI generation · Developers · Free prototypes</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Free (Labs)</span><span class="winner-badge">★ Best Free UI Gen</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌐</div><div class="card-name-group"><div class="card-name">Wix AI</div><div class="card-maker">Wix</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Describe the website you want and Wix generates a complete draft with layout, copy, images, and a logo. Best for solo creators, freelancers, and small businesses wanting a professional site without a developer.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Small business sites · Portfolios · No-code</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · From $17/mo</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🅰️</div><div class="card-name-group"><div class="card-name">Canva AI</div><div class="card-maker">Canva</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Magic Studio features inside Canva: text-to-image, background remover, AI presentation builder, magic resize, and brand kit enforcement. Best for non-designers creating polished content fast.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Social graphics · Presentations · Non-designers</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $15/mo Pro</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🏗️</div><div class="card-name-group"><div class="card-name">Framer AI</div><div class="card-maker">Framer</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Generate complete responsive websites from a prompt. AI copy writer, AI image generator, and animations built in. Publishes instantly. Best for startups and creators who want design-quality sites with zero code.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Startups · Landing pages · Design-quality sites</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-freemium">Free · $10/mo Mini</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  10. AI AGENTS PLATFORMS               -->
+<!-- ═══════════════════════════════════════ -->
+<div class="category-section cat-agents" id="cat-agents">
+  <div class="cat-header">
+    <div class="cat-title-group">
+      <div class="cat-eyebrow" style="color:#ef233c">Category 10</div>
+      <div class="cat-title">AI Agent Platforms</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <div class="cat-count">5 tools</div>
+      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">LangGraph (dev) · Perplexity Computer (pro)</span></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🕸️</div><div class="card-name-group"><div class="card-name">LangGraph</div><div class="card-maker">LangChain</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Framework for building stateful, multi-agent workflows as graphs. Supervisor, hierarchical, and parallel agent architectures. Industry standard for production agent engineering in 2026.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">AI engineers · Production agents · Complex workflows</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span><span class="winner-badge">★ Best Dev Framework</span></div>
+    </div>
+
+    <div class="tool-card winner">
+      <div class="card-top"><div class="card-emoji">🖥️</div><div class="card-name-group"><div class="card-name">Perplexity Computer</div><div class="card-maker">Perplexity AI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Multi-agent system with 20+ models, 100s of connectors, and a dedicated Codex coding subagent. Available to all Pro subscribers. Comet handles multi-step workflows, calendar briefing, and research pipelines.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Pro users · Research pipelines · Multi-step tasks</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">Perplexity Pro $20/mo</span><span class="winner-badge">★ Best Pro Agent</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">👥</div><div class="card-name-group"><div class="card-name">CrewAI</div><div class="card-maker">CrewAI</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Framework for role-based multi-agent teams where each agent has a specialty (researcher, writer, coder, etc.). Easy to configure, great for content pipelines, research automation, and data workflows.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Role-based agents · Content pipelines · No-code config</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🏢</div><div class="card-name-group"><div class="card-name">Microsoft Agent 365</div><div class="card-maker">Microsoft</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Enterprise control plane for AI agents across M365, launched May 2026. Manages, monitors, and governs fleets of autonomous agents working in Word, Excel, Teams, and SharePoint. Requires E7 or E5+Copilot.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Enterprise · M365 teams · Agent governance</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-paid">Enterprise · E7 plan</span></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🤝</div><div class="card-name-group"><div class="card-name">AutoGen</div><div class="card-maker">Microsoft Research</div></div></div>
+      <div class="card-body">
+        <p class="card-desc">Open-source framework for multi-agent conversation. Agents debate, correct each other, and collaborate on complex tasks. Strong research community; flexible for experimental agent architectures.</p>
+        <div><div class="card-best-for">Best For</div><div class="card-use">Research · Debate agents · Experimental workflows</div></div>
+      </div>
+      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span></div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">AiTechs_LVR</div>
+  <p>50+ AI Tools · 10 Categories · Best Per Category · Updated May 2026</p>
+  <p style="margin-top:8px;opacity:.3;">There are 4,000+ AI tools in existence. This guide covers the ones that matter.</p>
+</footer>
+
+<script>
+// Filter logic
+function filterCat(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.category-section').forEach(s => {
+    if(cat === 'all' || s.id === cat) {
+      s.style.display = '';
+    } else {
+      s.style.display = 'none';
+    }
+  });
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Stagger child cards
+      e.target.querySelectorAll('.tool-card').forEach((c,i) => {
+        c.style.transitionDelay = (i * 0.07) + 's';
+        c.style.opacity = '1';
+        c.style.transform = 'translateY(0)';
+      });
+    }
+  });
+}, {threshold: 0.05});
+
+document.querySelectorAll('.category-section').forEach(s => {
+  // set cards to invisible initially
+  s.querySelectorAll('.tool-card').forEach(c => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(20px)';
+    c.style.transition = 'opacity .5s, transform .5s, box-shadow .25s, border-color .25s';
+  });
+  observer.observe(s);
+});
+</script>
+</body>
+</html>
