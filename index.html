@@ -3,1041 +3,908 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>AiTechs_LVR · Best AI Tools 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>AI Best Tools 2026 — Student Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0e0c0a;
-  --paper:#f5f0e8;
-  --cream:#ede8dc;
-  --warm:#d4c9b0;
-  --accent-r:#e63946;
-  --accent-o:#f4a261;
-  --accent-g:#2a9d8f;
-  --accent-b:#457b9d;
-  --accent-p:#7b2d8b;
-  --accent-y:#e9c46a;
-  --accent-t:#06d6a0;
-  --accent-c:#118ab2;
+--bg:#0d0d1a;
+--surface:#13131f;
+--surface2:#1a1a2e;
+--surface3:#21213a;
+--border:#2a2a4a;
+--text:#e8e8f0;
+--text2:#a0a0c0;
+--text3:#6060a0;
+--primary:#6c63ff;
+--primary-light:#8b84ff;
+--primary-dark:#4a43cc;
+--accent1:#ff6b6b;
+--accent2:#ffd93d;
+--accent3:#6bcb77;
+--accent4:#4d96ff;
+--accent5:#ff6bda;
+--gradient1:linear-gradient(135deg,#6c63ff,#ff6bda);
+--gradient2:linear-gradient(135deg,#4d96ff,#6bcb77);
+--gradient3:linear-gradient(135deg,#ff6b6b,#ffd93d);
+--radius:16px;
+--radius-sm:10px;
+--radius-xs:6px;
+--shadow:0 8px 32px rgba(0,0,0,0.4);
+--shadow-card:0 4px 20px rgba(108,99,255,0.15);
 }
-*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'DM Sans',sans-serif;
-  overflow-x:hidden;
-}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
 
-/* ── NOISE TEXTURE OVERLAY ── */
-body::after{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:999;opacity:.5;
-}
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
 
-/* ── HEADER ── */
-header{
-  background:var(--ink);
-  color:var(--paper);
-  padding:80px 40px 60px;
-  position:relative;overflow:hidden;
-}
-header::before{
-  content:'';position:absolute;
-  top:-60px;right:-80px;
-  width:400px;height:400px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(230,57,70,0.3),transparent 70%);
-}
-header::after{
-  content:'';position:absolute;
-  bottom:-80px;left:10%;
-  width:300px;height:300px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(42,157,143,0.2),transparent 70%);
-}
-.header-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;}
-.header-eyebrow{
-  font-family:'DM Mono',monospace;
-  font-size:11px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--accent-o);margin-bottom:20px;
-}
-header h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(60px,10vw,140px);
-  line-height:.9;letter-spacing:2px;
-  margin-bottom:24px;
-}
-header h1 em{color:var(--accent-r);font-style:normal;}
-.header-meta{
-  display:flex;gap:32px;flex-wrap:wrap;align-items:center;
-  font-family:'DM Mono',monospace;font-size:12px;
-  color:rgba(245,240,232,0.5);
-}
-.header-badge{
-  background:var(--accent-r);color:#fff;
-  padding:6px 16px;border-radius:2px;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;
-  font-weight:500;
-}
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#0d0d1a 0%,#1a1040 50%,#0d1a2a 100%);padding:70px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 50%,rgba(108,99,255,0.12) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,0.15);border:1px solid rgba(108,99,255,0.3);border-radius:50px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--primary-light);letter-spacing:0.5px;margin-bottom:24px}
+.hero-badge span{width:8px;height:8px;background:#6bcb77;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#b8b0ff 50%,#ff6bda 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);max-width:620px;margin:0 auto 40px}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:40px}
+.stat-pill{background:var(--surface2);border:1px solid var(--border);border-radius:50px;padding:12px 24px;text-align:center;min-width:130px}
+.stat-pill .num{display:block;font-size:1.6rem;font-weight:800;background:var(--gradient1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-pill .lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.hero-tip{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.2);border-radius:var(--radius-sm);padding:14px 20px;max-width:560px;margin:0 auto;font-size:14px;color:var(--text2)}
+.hero-tip strong{color:var(--primary-light)}
 
-/* ── FILTER TABS ── */
-.filter-bar{
-  background:var(--cream);
-  border-bottom:2px solid var(--ink);
-  padding:0 40px;
-  position:sticky;top:0;z-index:100;
-}
-.filter-inner{
-  max-width:1400px;margin:0 auto;
-  display:flex;gap:0;overflow-x:auto;
-  scrollbar-width:none;
-}
-.filter-inner::-webkit-scrollbar{display:none;}
-.filter-btn{
-  padding:16px 24px;
-  border:none;background:transparent;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
-  text-transform:uppercase;cursor:pointer;color:rgba(14,12,10,0.45);
-  border-bottom:3px solid transparent;
-  margin-bottom:-2px;
-  transition:all .2s;white-space:nowrap;
-}
-.filter-btn:hover{color:var(--ink);}
-.filter-btn.active{color:var(--ink);border-bottom-color:var(--accent-r);}
+/* ── NAV ── */
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(13,13,26,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:4px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-btn{flex-shrink:0;display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--radius-xs);border:none;background:transparent;color:var(--text2);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-family:inherit}
+.nav-btn:hover{background:var(--surface3);color:var(--text)}
+.nav-btn.active{background:rgba(108,99,255,0.2);color:var(--primary-light);font-weight:600}
+.nav-btn .icon{font-size:16px}
 
-/* ── MAIN GRID ── */
-main{max-width:1400px;margin:0 auto;padding:60px 40px;}
+/* ── LAYOUT ── */
+.main{max-width:1200px;margin:0 auto;padding:40px 24px 80px}
 
 /* ── CATEGORY SECTION ── */
-.category-section{
-  margin-bottom:80px;
-  opacity:0;transform:translateY(32px);
-  transition:opacity .7s,transform .7s;
-}
-.category-section.visible{opacity:1;transform:translateY(0);}
+.cat-section{margin-bottom:64px}
+.cat-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.cat-meta{}
+.cat-num{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
+.cat-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text);display:flex;align-items:center;gap:12px}
+.cat-title .icon{font-size:1.8rem}
+.cat-best{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-xs);padding:8px 14px;font-size:12px;color:var(--text2);white-space:nowrap;flex-shrink:0}
+.cat-best strong{color:var(--accent2)}
 
-.cat-header{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  margin-bottom:32px;padding-bottom:16px;
-  border-bottom:2px solid var(--ink);
-  flex-wrap:wrap;gap:12px;
-}
-.cat-title-group{}
-.cat-eyebrow{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:3px;text-transform:uppercase;
-  margin-bottom:4px;
-}
-.cat-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(32px,5vw,52px);
-  letter-spacing:1px;line-height:1;
-}
-.cat-count{
-  font-family:'DM Mono',monospace;font-size:11px;
-  color:rgba(14,12,10,0.4);letter-spacing:1px;
-}
-.cat-winner{
-  display:flex;align-items:center;gap:8px;
-  padding:8px 16px;
-  border:1.5px solid var(--ink);
-  border-radius:2px;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;
-}
-.cat-winner-label{color:rgba(14,12,10,0.5);}
-.cat-winner-name{font-weight:500;}
-
-/* ── TOOL CARDS GRID ── */
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:20px;
-}
+/* ── TOOL GRID ── */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 
 /* ── TOOL CARD ── */
-.tool-card{
-  background:#fff;
-  border:1.5px solid rgba(14,12,10,0.12);
-  border-radius:4px;
-  overflow:hidden;
-  transition:transform .25s,box-shadow .25s,border-color .25s;
-  cursor:default;
-  display:flex;flex-direction:column;
-}
-.tool-card:hover{
-  transform:translateY(-5px) rotate(-0.3deg);
-  box-shadow:6px 8px 0 var(--ink);
-  border-color:var(--ink);
-}
-.tool-card.winner{
-  border-width:2.5px;
-}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all 0.25s;cursor:default;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.25s;pointer-events:none}
+.tool-card:hover{border-color:rgba(108,99,255,0.5);transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.tool-card:hover::before{opacity:1}
+.tool-card.featured{border-color:rgba(108,99,255,0.4);background:linear-gradient(135deg,rgba(108,99,255,0.08),var(--surface))}
 
-/* COLOR ACCENTS per category */
-.cat-chatbots .tool-card.winner{border-color:var(--accent-r);}
-.cat-chatbots .tool-card.winner .card-top{background:var(--accent-r);}
-.cat-image .tool-card.winner{border-color:var(--accent-p);}
-.cat-image .tool-card.winner .card-top{background:var(--accent-p);}
-.cat-coding .tool-card.winner{border-color:var(--accent-b);}
-.cat-coding .tool-card.winner .card-top{background:var(--accent-b);}
-.cat-video .tool-card.winner{border-color:var(--accent-g);}
-.cat-video .tool-card.winner .card-top{background:var(--accent-g);}
-.cat-writing .tool-card.winner{border-color:var(--accent-o);}
-.cat-writing .tool-card.winner .card-top{background:var(--accent-o);}
-.cat-research .tool-card.winner{border-color:var(--accent-c);}
-.cat-research .tool-card.winner .card-top{background:var(--accent-c);}
-.cat-audio .tool-card.winner{border-color:var(--accent-y);}
-.cat-audio .tool-card.winner .card-top{background:#c0873a;}
-.cat-productivity .tool-card.winner{border-color:var(--accent-t);}
-.cat-productivity .tool-card.winner .card-top{background:var(--accent-t);}
-.cat-design .tool-card.winner{border-color:#8338ec;}
-.cat-design .tool-card.winner .card-top{background:#8338ec;}
-.cat-agents .tool-card.winner{border-color:#ef233c;}
-.cat-agents .tool-card.winner .card-top{background:#ef233c;}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.card-icon-name{display:flex;align-items:center;gap:12px}
+.card-emoji{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.card-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--text);line-height:1.2}
+.card-maker{font-size:12px;color:var(--text3);margin-top:3px;font-weight:400}
+.badge-wrap{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.badge{display:inline-block;padding:4px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap}
+.badge-star{background:linear-gradient(135deg,#ffd93d,#ff6b6b);color:#1a1a00}
+.badge-free{background:rgba(107,203,119,0.2);color:#6bcb77;border:1px solid rgba(107,203,119,0.3)}
 
-.card-top{
-  padding:20px 20px 16px;
-  background:var(--cream);
-  border-bottom:1.5px solid rgba(14,12,10,0.08);
-  display:flex;align-items:flex-start;gap:14px;
-}
-.tool-card.winner .card-top{color:#fff;}
+.card-desc{font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:16px}
 
-.card-emoji{
-  font-size:28px;line-height:1;flex-shrink:0;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-}
-.card-name-group{}
-.card-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:22px;letter-spacing:.5px;line-height:1;
-  margin-bottom:2px;
-}
-.tool-card.winner .card-name{color:#fff;}
-.card-maker{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:1px;opacity:.6;
-}
+.card-bestfor{}
+.bestfor-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.bestfor-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:4px 10px;background:var(--surface3);border-radius:50px;font-size:12px;color:var(--text2);border:1px solid var(--border)}
 
-.card-body{
-  padding:16px 20px 20px;
-  flex:1;display:flex;flex-direction:column;gap:12px;
-}
-.card-desc{
-  font-size:13px;line-height:1.65;
-  color:rgba(14,12,10,0.7);
-  flex:1;
-}
-.card-best-for{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:1px;text-transform:uppercase;
-  color:rgba(14,12,10,0.4);
-  margin-bottom:2px;
-}
-.card-use{
-  font-size:12.5px;font-weight:500;
-  color:var(--ink);
-}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.price{font-size:12px;font-weight:600;color:var(--text3)}
+.price .free{color:var(--accent3)}
 
-.card-footer{
-  padding:12px 20px;
-  border-top:1px solid rgba(14,12,10,0.07);
-  display:flex;align-items:center;justify-content:space-between;
-}
-.price-tag{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
-  padding:3px 10px;border-radius:2px;
-  text-transform:uppercase;
-}
-.price-free{background:rgba(42,157,143,0.12);color:var(--accent-g);}
-.price-freemium{background:rgba(69,123,157,0.12);color:var(--accent-b);}
-.price-paid{background:rgba(230,57,70,0.1);color:var(--accent-r);}
+/* category color accents */
+.c1 .card-emoji{background:rgba(255,107,107,0.15)}
+.c2 .card-emoji{background:rgba(77,150,255,0.15)}
+.c3 .card-emoji{background:rgba(255,107,218,0.15)}
+.c4 .card-emoji{background:rgba(255,217,61,0.15)}
+.c5 .card-emoji{background:rgba(107,203,119,0.15)}
+.c6 .card-emoji{background:rgba(108,99,255,0.15)}
+.c7 .card-emoji{background:rgba(255,160,50,0.15)}
+.c8 .card-emoji{background:rgba(77,220,220,0.15)}
+.c9 .card-emoji{background:rgba(200,107,255,0.15)}
+.c10 .card-emoji{background:rgba(255,140,60,0.15)}
 
-.winner-badge{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:2px;text-transform:uppercase;
-  background:var(--ink);color:var(--paper);
-  padding:3px 10px;border-radius:2px;
-}
+.c1 .cat-num{color:#ff6b6b}
+.c2 .cat-num{color:#4d96ff}
+.c3 .cat-num{color:#ff6bda}
+.c4 .cat-num{color:#ffd93d}
+.c5 .cat-num{color:#6bcb77}
+.c6 .cat-num{color:#a78bfa}
+.c7 .cat-num{color:#ffaa32}
+.c8 .cat-num{color:#4ddcdc}
+.c9 .cat-num{color:#c86bff}
+.c10 .cat-num{color:#ff8c3c}
 
-/* ── STATS STRIP ── */
-.stats-strip{
-  background:var(--ink);color:var(--paper);
-  padding:40px;margin-bottom:60px;
-  border-radius:4px;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:32px;text-align:center;
-}
-.stat-item .n{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:52px;letter-spacing:1px;
-  color:var(--accent-o);line-height:1;
-}
-.stat-item .l{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:3px;text-transform:uppercase;
-  color:rgba(245,240,232,0.45);
-  margin-top:4px;
-}
+/* ── STUDENT TIP BOX ── */
+.tip-box{background:linear-gradient(135deg,rgba(108,99,255,0.12),rgba(77,150,255,0.08));border:1px solid rgba(108,99,255,0.25);border-radius:var(--radius);padding:20px 24px;margin-bottom:28px;display:flex;gap:16px;align-items:flex-start}
+.tip-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.tip-content{}
+.tip-content h4{font-size:13px;font-weight:700;color:var(--primary-light);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.tip-content p{font-size:13px;color:var(--text2);line-height:1.6}
 
-/* ── SCROLL REVEAL ── */
-@keyframes fadeSlideUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
+/* ── LEARN MORE LINK ── */
+.learn-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--primary-light);text-decoration:none;opacity:0.8;transition:opacity 0.2s}
+.learn-link:hover{opacity:1}
 
 /* ── FOOTER ── */
-footer{
-  background:var(--ink);color:var(--paper);
-  padding:48px 40px;text-align:center;
-}
-footer .logo{
-  font-family:'Bebas Neue',sans-serif;font-size:36px;
-  color:var(--accent-o);letter-spacing:2px;margin-bottom:8px;
-}
-footer p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.4);}
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer h3{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:8px;background:var(--gradient1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer p{color:var(--text3);font-size:13px;margin-bottom:4px}
+.footer .updated{font-size:12px;color:var(--text3);margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.footer .updated span{color:var(--accent3);font-weight:600}
 
-/* ── RESPONSIVE ── */
-@media(max-width:600px){
-  header{padding:60px 24px 48px;}
-  main{padding:40px 24px;}
-  .filter-bar{padding:0 24px;}
-  .tools-grid{grid-template-columns:1fr;}
+/* ── SEARCH BAR ── */
+.search-wrap{max-width:560px;margin:0 auto 0;position:relative}
+.search-input{width:100%;padding:14px 20px 14px 48px;background:var(--surface2);border:1px solid var(--border);border-radius:50px;color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:all 0.2s}
+.search-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(108,99,255,0.15)}
+.search-input::placeholder{color:var(--text3)}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
+
+@media(max-width:640px){
+  .tools-grid{grid-template-columns:1fr}
+  .cat-header{flex-direction:column}
+  .hero-stats{gap:12px}
+  .stat-pill{min-width:100px;padding:10px 16px}
 }
 </style>
-</head>
-<body>
+</head><body>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-    <div class="header-eyebrow">AiTechs_LVR · Complete Reference Guide</div>
-    <h1>BEST AI<br/><em>TOOLS</em><br/>2026</h1>
-    <div class="header-meta">
-      <span class="header-badge">Updated May 2026</span>
-      <span>10 Categories</span>
-      <span>50+ Tools Reviewed</span>
-      <span>Best Per Category Highlighted</span>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span>Updated June 2026 · Verified &amp; Curated</div>
+  <h1>Best AI Tools 2026<br/>Student Edition 🎓</h1>
+  <p class="hero-sub">Handpicked, verified AI tools across 10 categories — find what you need to study smarter, build faster, and create better.</p>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" type="search" id="searchInput" placeholder="Search tools, categories, or use cases..." />
   </div>
-</header>
-
-<!-- FILTER BAR -->
-<div class="filter-bar">
-  <div class="filter-inner">
-    <button class="filter-btn active" onclick="filterCat('all',this)">All</button>
-    <button class="filter-btn" onclick="filterCat('cat-chatbots',this)">🤖 Chatbots</button>
-    <button class="filter-btn" onclick="filterCat('cat-coding',this)">💻 Coding</button>
-    <button class="filter-btn" onclick="filterCat('cat-image',this)">🎨 Image</button>
-    <button class="filter-btn" onclick="filterCat('cat-video',this)">🎬 Video</button>
-    <button class="filter-btn" onclick="filterCat('cat-writing',this)">✍️ Writing</button>
-    <button class="filter-btn" onclick="filterCat('cat-research',this)">🔬 Research</button>
-    <button class="filter-btn" onclick="filterCat('cat-audio',this)">🎵 Audio</button>
-    <button class="filter-btn" onclick="filterCat('cat-productivity',this)">⚡ Productivity</button>
-    <button class="filter-btn" onclick="filterCat('cat-design',this)">🖼️ Design</button>
-    <button class="filter-btn" onclick="filterCat('cat-agents',this)">🕸️ Agents</button>
+  <div class="hero-stats" style="margin-top:28px">
+    <div class="stat-pill"><span class="num">4,000+</span><span class="lbl">AI Tools Exist</span></div>
+    <div class="stat-pill"><span class="num">50+</span><span class="lbl">Reviewed Here</span></div>
+    <div class="stat-pill"><span class="num">10</span><span class="lbl">Categories</span></div>
+    <div class="stat-pill"><span class="num">FREE</span><span class="lbl">Tools Included</span></div>
+    <div class="stat-pill"><span class="num">20%</span><span class="lbl">Job Growth</span></div>
   </div>
-</div>
+  <div class="hero-tip">💡 <strong>Student tip:</strong> Start with the ⭐ Best picks in each category — they offer free tiers perfect for learning.</div>
+</section>
 
-<main>
+<!-- NAV -->
+<nav class="nav-wrap" id="mainNav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="scrollToSection('all')"><span class="icon">🏠</span>All</button>
+    <button class="nav-btn" onclick="scrollToSection('cat1')"><span class="icon">💬</span>Chatbots</button>
+    <button class="nav-btn" onclick="scrollToSection('cat2')"><span class="icon">💻</span>Coding</button>
+    <button class="nav-btn" onclick="scrollToSection('cat3')"><span class="icon">🎨</span>Image</button>
+    <button class="nav-btn" onclick="scrollToSection('cat4')"><span class="icon">🎬</span>Video</button>
+    <button class="nav-btn" onclick="scrollToSection('cat5')"><span class="icon">✍️</span>Writing</button>
+    <button class="nav-btn" onclick="scrollToSection('cat6')"><span class="icon">🔬</span>Research</button>
+    <button class="nav-btn" onclick="scrollToSection('cat7')"><span class="icon">🎵</span>Audio</button>
+    <button class="nav-btn" onclick="scrollToSection('cat8')"><span class="icon">⚡</span>Productivity</button>
+    <button class="nav-btn" onclick="scrollToSection('cat9')"><span class="icon">🎯</span>Design</button>
+    <button class="nav-btn" onclick="scrollToSection('cat10')"><span class="icon">🤖</span>Agents</button>
+  </div>
+</nav>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stat-item"><div class="n">4,000+</div><div class="l">AI Tools Exist</div></div>
-  <div class="stat-item"><div class="n">50+</div><div class="l">Reviewed Here</div></div>
-  <div class="stat-item"><div class="n">10</div><div class="l">Categories</div></div>
-  <div class="stat-item"><div class="n">$142K</div><div class="l">Avg AI Eng Salary</div></div>
-  <div class="stat-item"><div class="n">20%</div><div class="l">Job Growth (BLS)</div></div>
-</div>
+<main class="main" id="all">
 
-<!-- ═══════════════════════════════════════ -->
-<!--  1. AI CHATBOTS & ASSISTANTS           -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-chatbots" id="cat-chatbots">
+<!-- ══════════════════════════════ CAT 1: CHATBOTS ══════════════════════════════ -->
+<section class="cat-section c1" id="cat1">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-r)">Category 01</div>
-      <div class="cat-title">AI Chatbots &amp; Assistants</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 01</div>
+      <div class="cat-title"><span class="icon">💬</span> AI Chatbots &amp; Assistants</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Claude (Writing) · ChatGPT (Versatility)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Claude</strong> (Writing) · <strong>ChatGPT</strong> (Versatility)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Starting Point</h4>
+      <p>Chatbots are your AI study buddies. Use them for explaining concepts, brainstorming essays, summarizing readings, and getting instant answers. All top options have free tiers — try them all!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🟠</div><div class="card-name-group"><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Best for nuanced writing, complex reasoning, long documents (200K token context), and coding. Produces human-quality prose, avoids hallucinations more consistently than peers.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Writing · Code · Long docs · Deep analysis</div></div>
+    <div class="tool-card c1 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🟠</div><div><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Writing</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Writing</span></div>
+      <p class="card-desc">Best for nuanced writing, complex reasoning &amp; long documents (200K token context). Produces human-quality prose, avoids hallucinations more consistently than peers. Great for essay help and deep analysis.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📝 Essay Writing</span><span class="tag">🧠 Deep Analysis</span><span class="tag">💻 Coding Help</span><span class="tag">📄 Long Docs</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Pro</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🟢</div><div class="card-name-group"><div class="card-name">ChatGPT</div><div class="card-maker">OpenAI · GPT-5.4</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Most versatile all-rounder. Handles text, images, voice, code execution, web browsing, and file analysis. GPT-5.4 integrates reasoning by default — no separate "o-series" mode.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Everything · Brainstorming · Image gen · Plugins</div></div>
+    <div class="tool-card c1 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🟢</div><div><div class="card-name">ChatGPT</div><div class="card-maker">OpenAI · GPT-5.4</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Most Versatile</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Plus</span><span class="winner-badge">★ Most Versatile</span></div>
+      <p class="card-desc">Most versatile all-rounder. Handles text, images, voice, code, web browsing &amp; file analysis. GPT-5.4 integrates reasoning by default. Perfect for students who need one tool for everything.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎯 Everything</span><span class="tag">💡 Brainstorming</span><span class="tag">🖼️ Image Gen</span><span class="tag">🌐 Web Search</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Plus</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🔵</div><div class="card-name-group"><div class="card-name">Gemini</div><div class="card-maker">Google · Gemini 3.1 Pro</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Google's flagship model with deep integration into Workspace (Docs, Sheets, Gmail). Best for research synthesis, multimodal tasks, and users already in the Google ecosystem.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Research · Google Workspace · Multimodal</div></div>
+    <div class="tool-card c1">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🔵</div><div><div class="card-name">Gemini</div><div class="card-maker">Google · Gemini 3.1 Pro</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Advanced</span></div>
+      <p class="card-desc">Google's flagship with deep integration into Workspace (Docs, Sheets, Gmail). Best for research synthesis &amp; multimodal tasks. Ideal if you already use Google tools for school.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🔍 Research</span><span class="tag">📊 Google Workspace</span><span class="tag">📷 Multimodal</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Advanced</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚫</div><div class="card-name-group"><div class="card-name">Grok</div><div class="card-maker">xAI · Grok 3</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">X/Twitter-integrated AI with live web access and deep reasoning. Excels at fact-checking real-time events, tech analysis, and users who want "less fluff, more thinking."</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Fact-checking · Real-time · Tech power users</div></div>
+    <div class="tool-card c1">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">⚫</div><div><div class="card-name">Grok</div><div class="card-maker">xAI · Grok 3</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · X Premium+</span></div>
+      <p class="card-desc">X/Twitter-integrated AI with live web access &amp; deep reasoning. Excels at fact-checking real-time events &amp; tech analysis. Great for staying updated on current events for assignments.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📰 Current Events</span><span class="tag">✅ Fact Checking</span><span class="tag">💻 Tech</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · X Premium+</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🦙</div><div class="card-name-group"><div class="card-name">Meta Spark</div><div class="card-maker">Meta · Open Source</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Meta's new open-source model (successor to Llama). Genuinely competitive free option. Run it locally or via API. No usage fees, full control. Strong for privacy-conscious deployments.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Privacy · Self-hosted · Free · Research</div></div>
+    <div class="tool-card c1">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🦙</div><div><div class="card-name">Meta Llama (Open Source)</div><div class="card-maker">Meta · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+      <p class="card-desc">Meta's open-source model — genuinely competitive &amp; completely free. Run locally for full privacy, no usage fees. Perfect for students who want to experiment with AI without cost.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🔒 Privacy</span><span class="tag">🆓 Free Forever</span><span class="tag">🔬 AI Research</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% Free · Open Source</span></span></div>
     </div>
-
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════ -->
-<!--  2. AI CODING TOOLS                    -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-coding" id="cat-coding">
+</section>
+<!-- ══════════════════════════════ CAT 2: CODING ══════════════════════════════ -->
+<section class="cat-section c2" id="cat2">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-b)">Category 02</div>
-      <div class="cat-title">AI Coding Tools</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 02</div>
+      <div class="cat-title"><span class="icon">💻</span> AI Coding Tools</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Cursor 3 · Claude Code</span></div>
+    <div class="cat-best">⭐ Best → <strong>Cursor 3</strong> (IDE) · <strong>Claude Code</strong> (Quality)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Coding Tip</h4>
+      <p>Use GitHub Copilot (free for students via GitHub Education Pack!) to autocomplete code while you learn. Use Claude or ChatGPT to explain what the code does. Build projects 10x faster!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🖱️</div><div class="card-name-group"><div class="card-name">Cursor 3</div><div class="card-maker">Anysphere</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI-native IDE rebuilt around an Agents Window that runs parallel coding fleets. Handles full features end-to-end, not just autocomplete. Saves developers 8–12 hours per week in testing.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Full-stack development · Large codebases · Agent coding</div></div>
+    <div class="tool-card c2 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🖱️</div><div><div class="card-name">Cursor 3</div><div class="card-maker">Anysphere</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best IDE</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best IDE</span></div>
+      <p class="card-desc">AI-native IDE with parallel coding agents. Handles full features end-to-end, not just autocomplete. Saves developers 8–12 hours/week. Students love it for building full projects fast.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🏗️ Full-Stack</span><span class="tag">📦 Large Codebases</span><span class="tag">🤖 Agent Coding</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Pro</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">⌨️</div><div class="card-name-group"><div class="card-name">Claude Code</div><div class="card-maker">Anthropic</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Command-line agentic coding tool. Understands entire codebases, fixes bugs autonomously, writes tests, and refactors. Ranked #1 for code generation quality by multiple 2026 benchmarks.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Autonomous coding · CLI workflows · Refactoring</div></div>
+    <div class="tool-card c2 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">⌨️</div><div><div class="card-name">Claude Code</div><div class="card-maker">Anthropic</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Quality</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">Claude Max $100/mo</span><span class="winner-badge">★ Best Code Quality</span></div>
+      <p class="card-desc">Command-line agentic coding tool. Understands entire codebases, fixes bugs autonomously, writes tests &amp; refactors. Ranked #1 for code generation quality by multiple 2026 benchmarks.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🐛 Bug Fixing</span><span class="tag">🔄 Refactoring</span><span class="tag">🧪 Writing Tests</span></div></div>
+      <div class="card-bottom"><span class="price">Claude Max · $100/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🐙</div><div class="card-name-group"><div class="card-name">GitHub Copilot</div><div class="card-maker">Microsoft + OpenAI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Most widely adopted AI coding assistant. Now powered by GPT-5.4 Codex. Free tier is genuinely useful. Best integration with VS Code and GitHub workflows. Cowork powers Copilot Cowork in M365.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">VS Code users · GitHub workflows · Teams</div></div>
+    <div class="tool-card c2">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🐙</div><div><div class="card-name">GitHub Copilot</div><div class="card-maker">Microsoft + OpenAI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Free for Students</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free tier · $10/mo Pro</span></div>
+      <p class="card-desc">Most widely adopted AI coding assistant, now powered by GPT-5.4. <strong>FREE for students</strong> via GitHub Education Pack! Best integration with VS Code. Must-have for CS students.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🆓 Free via Edu Pack</span><span class="tag">📝 VS Code</span><span class="tag">🔗 GitHub</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free (Student) · $10/mo Pro</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🚀</div><div class="card-name-group"><div class="card-name">Lovable</div><div class="card-maker">Lovable AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Build full web apps from plain English prompts. AI writes all the code, sets up the database, and deploys — no coding needed. Best for founders and product teams shipping MVPs fast.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">No-code app building · MVPs · Founders</div></div>
+    <div class="tool-card c2">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🚀</div><div><div class="card-name">Lovable</div><div class="card-maker">Lovable AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo</span></div>
+      <p class="card-desc">Build full web apps from plain English prompts — no coding needed! AI writes all the code, sets up the database &amp; deploys. Perfect for students building their first app or portfolio project.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🌐 No-Code Apps</span><span class="tag">📱 MVPs</span><span class="tag">🎨 Portfolio</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">DeepSeek V4</div><div class="card-maker">DeepSeek</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Surprisingly capable free model — genuinely competitive with paid options for coding tasks. Open-source, cheap to self-host. Strong choice when cost matters most.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Free coding · Self-hosted · Budget deployments</div></div>
+    <div class="tool-card c2">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">⚡</div><div><div class="card-name">DeepSeek V4</div><div class="card-maker">DeepSeek · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+      <p class="card-desc">Surprisingly capable free model competitive with paid options for coding tasks. Open-source &amp; cheap to self-host. Best free coding AI when budget matters — ideal for students!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🆓 Free Coding</span><span class="tag">🏠 Self-Hosted</span><span class="tag">💸 Budget</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% Free · Open Source</span></span></div>
     </div>
-
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════ -->
-<!--  3. AI IMAGE GENERATION               -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-image" id="cat-image">
+<!-- ══════════════════════════════ CAT 3: IMAGE ══════════════════════════════ -->
+<section class="cat-section c3" id="cat3">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-p)">Category 03</div>
-      <div class="cat-title">AI Image Generation</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 03</div>
+      <div class="cat-title"><span class="icon">🎨</span> AI Image Generation</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Midjourney · Ideogram (text-in-image)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Midjourney</strong> (Quality) · <strong>Ideogram</strong> (Text-in-image)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Creative Tip</h4>
+      <p>Use Adobe Firefly for school projects — it's commercially safe (won't get flagged). Use DALL·E 3 free inside ChatGPT. Midjourney makes stunning visuals for presentations that wow professors!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🎨</div><div class="card-name-group"><div class="card-name">Midjourney</div><div class="card-maker">Midjourney Inc.</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Gold standard for artistic, photorealistic, and editorial image quality. Unmatched aesthetic output. Preferred by designers, advertisers, and creative directors. Discord + web interface.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Art · Editorial · Advertising · Creative direction</div></div>
+    <div class="tool-card c3 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎨</div><div><div class="card-name">Midjourney</div><div class="card-maker">Midjourney Inc.</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Quality</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">From $10/mo</span><span class="winner-badge">★ Best Quality</span></div>
+      <p class="card-desc">Gold standard for artistic, photorealistic &amp; editorial image quality. Unmatched aesthetic output. Preferred by designers &amp; creative directors worldwide. Perfect for making presentations stand out.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🖼️ Presentations</span><span class="tag">🎭 Creative Projects</span><span class="tag">📢 Posters</span></div></div>
+      <div class="card-bottom"><span class="price">From $10/mo</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🔤</div><div class="card-name-group"><div class="card-name">Ideogram</div><div class="card-maker">Ideogram AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Gold standard for text inside images — accurate, stylized typography baked into generated visuals. Ideal for social media graphics, posters, and marketing assets where text must be readable.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Text-in-image · Posters · Social assets · Logos</div></div>
+    <div class="tool-card c3 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🔤</div><div><div class="card-name">Ideogram</div><div class="card-maker">Ideogram AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Text-in-Image</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $8/mo</span><span class="winner-badge">★ Best Text-in-Image</span></div>
+      <p class="card-desc">Gold standard for text inside images — accurate, stylized typography. Ideal for social media graphics, posters &amp; marketing assets where text must be readable. Free tier is very generous.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📋 Posters</span><span class="tag">📱 Social Media</span><span class="tag">🏷️ Logos</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $8/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌊</div><div class="card-name-group"><div class="card-name">Stable Diffusion</div><div class="card-maker">Stability AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Open-source, run locally or in the cloud. Fully customizable with LoRA fine-tunes and community models. Best for power users who want control and no content restrictions.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Custom models · Privacy · Developer control</div></div>
+    <div class="tool-card c3">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🌊</div><div><div class="card-name">Stable Diffusion</div><div class="card-maker">Stability AI · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+      <p class="card-desc">Open-source, run locally or in cloud. Fully customizable with community models. Best for students learning how AI image generation works under the hood. No restrictions, full control.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🆓 Free</span><span class="tag">🔬 Learning AI</span><span class="tag">🔧 Custom Models</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% Free · Open Source</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">✨</div><div class="card-name-group"><div class="card-name">Adobe Firefly</div><div class="card-maker">Adobe</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Commercially safe image generation trained on licensed Adobe Stock. Tight integration with Photoshop and Illustrator. Best for professionals needing IP-safe assets in Creative Cloud workflows.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Commercial use · Adobe CC users · IP safety</div></div>
+    <div class="tool-card c3">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">✨</div><div><div class="card-name">Adobe Firefly</div><div class="card-maker">Adobe</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · CC subscription</span></div>
+      <p class="card-desc">Commercially safe image generation trained on licensed Adobe Stock. Tight integration with Photoshop &amp; Illustrator. Best for students who need IP-safe assets for assignments &amp; projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">✅ Safe for School</span><span class="tag">🖥️ Adobe CC</span><span class="tag">💼 Commercial</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · CC Subscription</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎭</div><div class="card-name-group"><div class="card-name">DALL·E 3</div><div class="card-maker">OpenAI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Built into ChatGPT — easiest way to generate images via conversation. Strong at following complex prompts. Best for users who want image generation inside their existing ChatGPT workflow.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">ChatGPT users · Prompt-faithful · Quick gen</div></div>
+    <div class="tool-card c3">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎭</div><div><div class="card-name">DALL·E 3</div><div class="card-maker">OpenAI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">In ChatGPT Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Included in ChatGPT Plus</span></div>
+      <p class="card-desc">Built into ChatGPT — easiest way to generate images via conversation. Strong at following complex prompts. If you already use ChatGPT, this is the most convenient image generator.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">💬 In ChatGPT</span><span class="tag">⚡ Quick Gen</span><span class="tag">🎯 Prompt-Faithful</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Included in ChatGPT Free/Plus</span></span></div>
     </div>
-
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════ -->
-<!--  4. AI VIDEO GENERATION               -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-video" id="cat-video">
+</section>
+<!-- ══════════════════════════════ CAT 4: VIDEO ══════════════════════════════ -->
+<section class="cat-section c4" id="cat4">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-g)">Category 04</div>
-      <div class="cat-title">AI Video Generation</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 04</div>
+      <div class="cat-title"><span class="icon">🎬</span> AI Video Generation</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Synthesia (Business) · Veo (Realism)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Synthesia</strong> (Business) · <strong>Veo</strong> (Realism)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Video Tip</h4>
+      <p>Make your presentations come alive! HeyGen is great for creating avatar-based explainer videos. Runway is used in film schools worldwide. Start with free tiers to create amazing video projects.</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🎥</div><div class="card-name-group"><div class="card-name">Synthesia</div><div class="card-maker">Synthesia</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Turn scripts and documents into professional business videos with 240+ AI avatars in 160+ languages. Trusted by 50,000+ teams. Now includes Video Agents for customer-facing automation.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Business videos · Training · Multilingual · Avatars</div></div>
+    <div class="tool-card c4 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎥</div><div><div class="card-name">Synthesia</div><div class="card-maker">Synthesia</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Business Video</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">From $29/mo</span><span class="winner-badge">★ Best Business Video</span></div>
+      <p class="card-desc">Turn scripts into professional business videos with 240+ AI avatars in 160+ languages. Great for creating course content, explainer videos, &amp; multilingual study materials.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📹 Explainers</span><span class="tag">🌍 Multilingual</span><span class="tag">🎓 Course Content</span></div></div>
+      <div class="card-bottom"><span class="price">From $29/mo</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🌀</div><div class="card-name-group"><div class="card-name">Veo</div><div class="card-maker">Google DeepMind</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Google's text-to-video model producing cinematic, physically realistic video clips. Supports image-to-video and prompt-guided camera movement. Integrated with Gemini Ultra.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Realistic video · Cinematic clips · Creative direction</div></div>
+    <div class="tool-card c4 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🌀</div><div><div class="card-name">Veo</div><div class="card-maker">Google DeepMind</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Most Realistic</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Gemini Ultra plan</span><span class="winner-badge">★ Most Realistic</span></div>
+      <p class="card-desc">Google's text-to-video model producing cinematic, physically realistic clips. Supports image-to-video &amp; prompt-guided camera movement. Best for creative media students making impressive demos.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎞️ Film Projects</span><span class="tag">🎬 Cinematic</span><span class="tag">🌟 Showcase</span></div></div>
+      <div class="card-bottom"><span class="price">Gemini Ultra Plan</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">Higgsfield</div><div class="card-maker">Higgsfield AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">All-in-one creative platform: unlimited image generation + video creation + reference image reuse. Massive community catalogue for inspiration. Constantly adding new models.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Creative agencies · Short films · Social content</div></div>
+    <div class="tool-card c4">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">⚡</div><div><div class="card-name">Higgsfield</div><div class="card-maker">Higgsfield AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">From $9/mo</span></div>
+      <p class="card-desc">All-in-one creative platform: unlimited image generation + video creation + reference image reuse. Massive community for inspiration. Perfect for creative students exploring AI media.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎭 Short Films</span><span class="tag">📱 Social Content</span><span class="tag">🌐 Community</span></div></div>
+      <div class="card-bottom"><span class="price">From $9/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎞️</div><div class="card-name-group"><div class="card-name">HeyGen</div><div class="card-maker">HeyGen</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Best AI video translation and avatar tool. Dubbed videos with accurate lip-sync in 40+ languages. Popular for content localization, marketing videos, and personal AI avatar creation.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Video translation · Lip-sync dubbing · Avatars</div></div>
+    <div class="tool-card c4">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎞️</div><div><div class="card-name">HeyGen</div><div class="card-maker">HeyGen</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $24/mo</span></div>
+      <p class="card-desc">Best AI video translation with accurate lip-sync in 40+ languages. Create your own AI avatar for presentations. Perfect for language students &amp; international communication projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🌍 Translation</span><span class="tag">👤 AI Avatar</span><span class="tag">📊 Presentations</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $24/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎬</div><div class="card-name-group"><div class="card-name">Runway Gen-4</div><div class="card-maker">Runway</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Professional AI video editing and generation suite. Multi-modal video-to-video, inpainting, motion brush controls. Standard tool in Hollywood post-production workflows.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Professional editing · VFX · Post-production</div></div>
+    <div class="tool-card c4">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎬</div><div><div class="card-name">Runway Gen-4</div><div class="card-maker">Runway</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $12/mo</span></div>
+      <p class="card-desc">Professional AI video editing &amp; generation suite with motion brush controls. Standard tool in Hollywood post-production. Used in film schools worldwide for cutting-edge video projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎬 Film School</span><span class="tag">🎞️ VFX</span><span class="tag">✂️ Video Editing</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $12/mo</span></div>
     </div>
-
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════ -->
-<!--  5. AI WRITING TOOLS                   -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-writing" id="cat-writing">
+<!-- ══════════════════════════════ CAT 5: WRITING ══════════════════════════════ -->
+<section class="cat-section c5" id="cat5">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-o)">Category 05</div>
-      <div class="cat-title">AI Writing Tools</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 05</div>
+      <div class="cat-title"><span class="icon">✍️</span> AI Writing Tools</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Claude · Grammarly (editing)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Claude</strong> (Writing) · <strong>Grammarly</strong> (Editing)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Writing Tip</h4>
+      <p>Use AI as a writing partner, not a ghostwriter. Draft your ideas first, then use Claude to refine &amp; Grammarly to polish. Gamma turns your rough notes into beautiful slides in seconds!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🟠</div><div class="card-name-group"><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Widely agreed to produce the best long-form writing of any AI — doesn't over-explain, avoids filler, sounds like a competent human. Best for drafting, editing, and creative writing projects.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Long-form · Blogs · Reports · Creative writing</div></div>
+    <div class="tool-card c5 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🟠</div><div><div class="card-name">Claude</div><div class="card-maker">Anthropic</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Writing AI</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Writing AI</span></div>
+      <p class="card-desc">Widely agreed to produce the best long-form writing — doesn't over-explain, avoids filler, sounds like a competent human. Best for drafting essays, editing reports &amp; creative writing projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📝 Essays</span><span class="tag">📄 Reports</span><span class="tag">✏️ Creative Writing</span><span class="tag">📚 Long-Form</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Pro</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">✅</div><div class="card-name-group"><div class="card-name">Grammarly</div><div class="card-maker">Grammarly</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI writing assistant that catches grammar, tone, structure, and clarity issues in real-time. Works across browser, docs, and email. Best editing overlay for professionals who write daily.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Editing · Tone adjustment · Email · Daily writing</div></div>
+    <div class="tool-card c5 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">✅</div><div><div class="card-name">Grammarly</div><div class="card-maker">Grammarly</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Editing</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $12/mo Premium</span><span class="winner-badge">★ Best Editing</span></div>
+      <p class="card-desc">AI writing assistant that catches grammar, tone, structure &amp; clarity issues in real-time. Works across browser, docs &amp; email. Essential for students who want to submit polished work.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📖 Proofreading</span><span class="tag">🎯 Tone Check</span><span class="tag">✉️ Emails</span><span class="tag">📧 Daily Writing</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · $12/mo Premium</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📊</div><div class="card-name-group"><div class="card-name">Gamma</div><div class="card-maker">Gamma App</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Converts notes, outlines, or prompts into beautiful presentations, documents, and webpages in seconds. Efficiency-lovers dream — great for turning rough ideas into polished deliverables instantly.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Presentations · Docs · Webpages from notes</div></div>
+    <div class="tool-card c5">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📊</div><div><div class="card-name">Gamma</div><div class="card-maker">Gamma App</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $8/mo</span></div>
+      <p class="card-desc">Converts notes, outlines, or prompts into beautiful presentations, documents &amp; webpages in seconds. A student's dream — turn rough ideas into polished slides for any class instantly!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🖼️ Presentations</span><span class="tag">📋 Slides</span><span class="tag">⚡ Quick Docs</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $8/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">✍️</div><div class="card-name-group"><div class="card-name">Jasper</div><div class="card-maker">Jasper AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Enterprise content platform for marketing teams. Brand voice training, team collaboration, templates for ads, blogs, and emails. Integrated with Surfer SEO for optimized content.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Marketing teams · Brand content · SEO writing</div></div>
+    <div class="tool-card c5">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">✍️</div><div><div class="card-name">Jasper</div><div class="card-maker">Jasper AI</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">From $39/mo</span></div>
+      <p class="card-desc">Enterprise content platform with brand voice training &amp; SEO writing integration. Best for students in marketing, communications &amp; business who want professional-grade content tools.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📢 Marketing</span><span class="tag">🔍 SEO Writing</span><span class="tag">📝 Blog Posts</span></div></div>
+      <div class="card-bottom"><span class="price">From $39/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📝</div><div class="card-name-group"><div class="card-name">Writer</div><div class="card-maker">Writer</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Enterprise AI writing platform with deep brand voice customization, compliance controls, and team-wide style guides. Popular in regulated industries where tone consistency matters.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Enterprise brand voice · Compliance · Teams</div></div>
+    <div class="tool-card c5">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📝</div><div><div class="card-name">Writer</div><div class="card-maker">Writer</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">Enterprise pricing</span></div>
+      <p class="card-desc">Enterprise AI writing platform with deep brand voice customization &amp; style guides. Popular in regulated industries. Best for students entering corporate internships who need professional tone.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🏢 Enterprise Style</span><span class="tag">📏 Consistency</span><span class="tag">💼 Professional</span></div></div>
+      <div class="card-bottom"><span class="price">Enterprise Pricing</span></div>
     </div>
-
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════ -->
-<!--  6. AI RESEARCH TOOLS                  -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-research" id="cat-research">
+</section>
+<!-- ══════════════════════════════ CAT 6: RESEARCH ══════════════════════════════ -->
+<section class="cat-section c6" id="cat6">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-c)">Category 06</div>
-      <div class="cat-title">AI Research Tools</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 06</div>
+      <div class="cat-title"><span class="icon">🔬</span> AI Research Tools</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Perplexity · NotebookLM (your docs)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Perplexity</strong> (Web) · <strong>NotebookLM</strong> (Your Docs)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Research Tip</h4>
+      <p>NotebookLM is a student SUPERPOWER — upload all your lecture notes &amp; textbook PDFs, then ask it anything. It only answers from YOUR materials. 100% free! Consensus finds real academic papers.</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🔍</div><div class="card-name-group"><div class="card-name">Perplexity</div><div class="card-maker">Perplexity AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Answer engine that reads the web and gives you a single cited summary instead of a link list. Moved to subscription-first in 2026, dropped ads. Comet Assistant handles multi-step workflows. Galaxy S26 integration.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Quick research · Fact-checking · Due diligence</div></div>
+    <div class="tool-card c6 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🔍</div><div><div class="card-name">Perplexity</div><div class="card-maker">Perplexity AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Web Research</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $20/mo Pro</span><span class="winner-badge">★ Best Web Research</span></div>
+      <p class="card-desc">Answer engine that reads the web &amp; gives a single cited summary instead of a link list. Perfect for quick research &amp; fact-checking assignments. Always shows sources so you can verify.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">⚡ Quick Research</span><span class="tag">✅ Fact-Checking</span><span class="tag">🔗 Cited Sources</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $20/mo Pro</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">📓</div><div class="card-name-group"><div class="card-name">NotebookLM</div><div class="card-maker">Google</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Ground an AI entirely in your own documents (PDFs, websites, audio). Zero hallucination about outside topics. Can turn your documents into a podcast-style audio summary. Completely free, 50 docs/project.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Your own docs · Study · Internal research</div></div>
+    <div class="tool-card c6 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📓</div><div><div class="card-name">NotebookLM</div><div class="card-maker">Google · 100% FREE</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Doc Research</span><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">100% Free</span><span class="winner-badge">★ Best Doc Research</span></div>
+      <p class="card-desc">Ground AI in YOUR own documents (PDFs, websites, audio). Zero hallucination about outside topics. Can turn your notes into a podcast-style audio summary. FREE — 50 docs per project!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📚 Study Notes</span><span class="tag">📖 Textbooks</span><span class="tag">🎙️ Audio Summary</span><span class="tag">🆓 100% Free</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% FREE — Must Try!</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🔬</div><div class="card-name-group"><div class="card-name">Consensus</div><div class="card-maker">Consensus</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Searches millions of peer-reviewed academic papers to give evidence-based answers. Shows a "Consensus Meter" — the scientific community's aggregate stance on a question. Essential for academic research.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Academic research · Science · Evidence-based answers</div></div>
+    <div class="tool-card c6">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🔬</div><div><div class="card-name">Consensus</div><div class="card-maker">Consensus AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $9/mo</span></div>
+      <p class="card-desc">Searches millions of peer-reviewed academic papers to give evidence-based answers. Shows a "Consensus Meter" — the scientific community's stance on a question. Essential for academic research papers.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎓 Academic Papers</span><span class="tag">🔭 Science</span><span class="tag">📊 Evidence-Based</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $9/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌐</div><div class="card-name-group"><div class="card-name">Gemini Deep Research</div><div class="card-maker">Google</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Autonomous multi-step web browsing and synthesis. Uploads your own documents for context. Produces comprehensive research reports across dozens of sources, with citations. Google's secret weapon.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Deep research reports · Competitive analysis</div></div>
+    <div class="tool-card c6">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🌐</div><div><div class="card-name">Gemini Deep Research</div><div class="card-maker">Google</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Gemini Advanced plan</span></div>
+      <p class="card-desc">Autonomous multi-step web browsing &amp; synthesis. Produces comprehensive research reports across dozens of sources with citations. Great for thorough literature reviews &amp; competitive analysis.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📋 Deep Reports</span><span class="tag">📑 Literature Review</span><span class="tag">🔗 With Citations</span></div></div>
+      <div class="card-bottom"><span class="price">Gemini Advanced Plan</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🧠</div><div class="card-name-group"><div class="card-name">Manus</div><div class="card-maker">Manus AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI agent that browses the web, fills forms, and completes multi-step online tasks. Operates like a digital worker at a real desktop — navigates multiple websites, manipulates images, extracts data.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Deep research · Agentic web tasks · Data extraction</div></div>
+    <div class="tool-card c6">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🧠</div><div><div class="card-name">Manus</div><div class="card-maker">Manus AI</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">From $39/mo</span></div>
+      <p class="card-desc">AI agent that browses the web, fills forms &amp; completes multi-step tasks like a digital worker. Navigates multiple websites, extracts data autonomously. Great for complex research projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🌐 Agentic Web</span><span class="tag">📊 Data Extraction</span><span class="tag">🔄 Multi-Step Tasks</span></div></div>
+      <div class="card-bottom"><span class="price">From $39/mo</span></div>
     </div>
-
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════ -->
-<!--  7. AI AUDIO & MUSIC TOOLS             -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-audio" id="cat-audio">
+<!-- ══════════════════════════════ CAT 7: AUDIO ══════════════════════════════ -->
+<section class="cat-section c7" id="cat7">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:#c0873a">Category 07</div>
-      <div class="cat-title">AI Audio &amp; Music</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 07</div>
+      <div class="cat-title"><span class="icon">🎵</span> AI Audio &amp; Music</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">ElevenLabs (voice) · Suno (music)</span></div>
+    <div class="cat-best">⭐ Best → <strong>ElevenLabs</strong> (Voice) · <strong>Suno</strong> (Music)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Audio Tip</h4>
+      <p>Use Whisper (free!) to auto-transcribe lecture recordings and convert them to text notes. ElevenLabs can narrate your study materials. Suno can help music students understand song composition!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🎙️</div><div class="card-name-group"><div class="card-name">ElevenLabs</div><div class="card-maker">ElevenLabs</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Most realistic AI voices from text — indistinguishable from humans in many tests. Voice cloning with high accuracy. Voice Agents for real-time conversational bots. Used by audiobooks, YouTube, call centers.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Voiceovers · Audiobooks · Voice cloning · TTS</div></div>
+    <div class="tool-card c7 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎙️</div><div><div class="card-name">ElevenLabs</div><div class="card-maker">ElevenLabs</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Voice AI</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $5–$99/mo</span><span class="winner-badge">★ Best Voice AI</span></div>
+      <p class="card-desc">Most realistic AI voices from text — indistinguishable from humans. Voice cloning with high accuracy. Great for students creating audio content, narrating presentations &amp; accessibility tools.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎙️ Narration</span><span class="tag">♿ Accessibility</span><span class="tag">🎧 Audiobooks</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · $5–$99/mo</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🎵</div><div class="card-name-group"><div class="card-name">Suno v4.5</div><div class="card-maker">Suno AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Generate full songs — vocals, instruments, lyrics — from a single text prompt. Smart genre mixing, customizable vocals, editable lyrics, full control over track sections. Pro unlocks stems and commercial use.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Full song gen · Social media music · Creativity</div></div>
+    <div class="tool-card c7 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎵</div><div><div class="card-name">Suno v4.5</div><div class="card-maker">Suno AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Music Gen</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $10/mo Pro</span><span class="winner-badge">★ Best Music Gen</span></div>
+      <p class="card-desc">Generate full songs — vocals, instruments &amp; lyrics — from a single text prompt. Smart genre mixing, customizable vocals. Perfect for music students, creators &amp; anyone who loves making music.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎼 Full Songs</span><span class="tag">🎸 Music Projects</span><span class="tag">📱 Social Media</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $10/mo Pro</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎸</div><div class="card-name-group"><div class="card-name">Mureka AI</div><div class="card-maker">Mureka</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Turn your lyrics, reference tracks, or melodies into fully produced songs with polished vocals and stems. Virtual songwriting partner that learns your taste and lowers the barrier to music production.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Lyricists · Indie artists · Brand music</div></div>
+    <div class="tool-card c7">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎤</div><div><div class="card-name">Whisper</div><div class="card-maker">OpenAI · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium</span></div>
+      <p class="card-desc">Best open-source speech-to-text transcription. Handles accents, background noise &amp; 100+ languages. Run locally for free. Perfect for transcribing lectures, interviews &amp; creating study notes.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎓 Lecture Notes</span><span class="tag">🌍 100+ Languages</span><span class="tag">🆓 Free Forever</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% Free · Open Source</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎤</div><div class="card-name-group"><div class="card-name">Whisper</div><div class="card-maker">OpenAI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Best open-source speech-to-text transcription model. Handles accents, background noise, and 100+ languages. Run locally for free. Backbone of countless transcription and voice-note apps.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Transcription · Subtitles · Voice notes · Free</div></div>
+    <div class="tool-card c7">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎸</div><div><div class="card-name">Mureka AI</div><div class="card-maker">Mureka</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Free · Open Source</span></div>
+      <p class="card-desc">Turn lyrics, reference tracks or melodies into fully produced songs. Virtual songwriting partner that learns your style. Great for music composition students &amp; indie artists on a budget.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">✍️ Songwriting</span><span class="tag">🎵 Composition</span><span class="tag">🎤 Indie Music</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🎹</div><div class="card-name-group"><div class="card-name">Udio</div><div class="card-maker">Udio AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Competitor to Suno focused on higher production quality and more controllable outputs. Supports inpainting (edit specific sections of a song), custom genres, and stem downloads.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">High-quality music · Production control · Stems</div></div>
+    <div class="tool-card c7">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎹</div><div><div class="card-name">Udio</div><div class="card-maker">Udio AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Freemium · $10/mo</span></div>
+      <p class="card-desc">Competitor to Suno focused on higher production quality &amp; more controllable outputs. Supports editing specific sections of a song, custom genres &amp; stem downloads for remixing.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎛️ Production Quality</span><span class="tag">🎚️ Stems</span><span class="tag">🔄 Remixing</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Freemium</span> · $10/mo</span></div>
     </div>
-
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════ -->
-<!--  8. AI PRODUCTIVITY & AUTOMATION       -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-productivity" id="cat-productivity">
+</section>
+<!-- ══════════════════════════════ CAT 8: PRODUCTIVITY ══════════════════════════════ -->
+<section class="cat-section c8" id="cat8">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:var(--accent-t)">Category 08</div>
-      <div class="cat-title">Productivity &amp; Automation</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 08</div>
+      <div class="cat-title"><span class="icon">⚡</span> Productivity &amp; Automation</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Zapier (automation) · Fathom (meetings)</span></div>
+    <div class="cat-best">⭐ Best → <strong>Zapier</strong> (Automation) · <strong>Fathom</strong> (Meetings)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Productivity Tip</h4>
+      <p>Fathom is free and automatically takes notes during online classes — you can focus on listening, not typing! Motion auto-schedules your assignments around deadlines. Work smarter, not harder!</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">⚡</div><div class="card-name-group"><div class="card-name">Zapier</div><div class="card-maker">Zapier</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI orchestration layer connecting 8,000+ apps. Copilot builds entire workflows from natural language. Zapier Agents are AI teammates that handle multi-step tasks autonomously across your whole tech stack.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Workflow automation · App integrations · Teams</div></div>
+    <div class="tool-card c8 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">⚡</div><div><div class="card-name">Zapier</div><div class="card-maker">Zapier</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Automation</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · From $19/mo</span><span class="winner-badge">★ Best Automation</span></div>
+      <p class="card-desc">AI orchestration layer connecting 8,000+ apps. Build workflows from natural language — no code needed. Students can automate repetitive tasks like syncing notes, sending reminders &amp; filing assignments.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🔗 App Integrations</span><span class="tag">🔄 Automation</span><span class="tag">⏰ Reminders</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · From $19/mo</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">📋</div><div class="card-name-group"><div class="card-name">Fathom</div><div class="card-maker">Fathom AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Records meetings (Zoom, Meet, Teams), transcribes, and creates AI summaries with action items. Joins automatically, requires zero setup per meeting. Frees you to be present instead of taking notes.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Meeting notes · Action items · Async teams</div></div>
+    <div class="tool-card c8 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📋</div><div><div class="card-name">Fathom</div><div class="card-maker">Fathom AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Meeting AI</span><span class="badge badge-free">Free!</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $19/mo Team</span><span class="winner-badge">★ Best Meeting AI</span></div>
+      <p class="card-desc">Records online classes (Zoom, Meet, Teams), transcribes &amp; creates AI summaries with action items. Joins automatically — zero setup. Be fully present in class while Fathom takes perfect notes!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📚 Class Notes</span><span class="tag">🎓 Online Learning</span><span class="tag">✅ Action Items</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">FREE</span> · $19/mo Team</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📅</div><div class="card-name-group"><div class="card-name">Motion</div><div class="card-maker">Motion</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI project management that automatically schedules your tasks based on deadlines and priorities. Learns your calendar and rearranges work when things shift. Eliminates manual scheduling.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Task scheduling · Calendar management · Focus</div></div>
+    <div class="tool-card c8">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📅</div><div><div class="card-name">Motion</div><div class="card-maker">Motion</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">$19/mo individual</span></div>
+      <p class="card-desc">AI project management that automatically schedules your tasks based on deadlines &amp; priorities. Learns your calendar &amp; rearranges when things shift. Perfect for juggling multiple courses &amp; deadlines!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📅 Assignment Planning</span><span class="tag">⏰ Deadlines</span><span class="tag">🎯 Focus</span></div></div>
+      <div class="card-bottom"><span class="price">$19/mo Individual</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">📦</div><div class="card-name-group"><div class="card-name">ClickUp AI</div><div class="card-maker">ClickUp</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Full project management platform with Autopilot Agents that handle recurring work. Brain Max connects to external apps (Dropbox, SharePoint) and answers questions across your entire tech stack.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Project management · Teams · Cross-app queries</div></div>
+    <div class="tool-card c8">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">📦</div><div><div class="card-name">ClickUp AI</div><div class="card-maker">ClickUp</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · From $7/mo</span></div>
+      <p class="card-desc">Full project management platform with AI agents that handle recurring work. Brain Max connects to all your apps &amp; answers questions across your entire tech stack. Great for group projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">👥 Group Projects</span><span class="tag">📋 Task Management</span><span class="tag">🔗 Cross-App</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · From $7/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🖥️</div><div class="card-name-group"><div class="card-name">Claude Cowork</div><div class="card-maker">Anthropic</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Desktop AI that operates on your actual local files and folders. No copy-pasting into chat — point it at a folder and it works. GA on macOS and Windows. Also powers Copilot Cowork inside Microsoft 365.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Local files · Desktop automation · Documents</div></div>
+    <div class="tool-card c8">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🖥️</div><div><div class="card-name">Claude Cowork</div><div class="card-maker">Anthropic</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">Claude Max $100/mo</span></div>
+      <p class="card-desc">Desktop AI that operates on your actual local files &amp; folders. No copy-pasting — point it at a folder and it works. Available on macOS and Windows. Great for organizing study materials.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🗂️ File Organization</span><span class="tag">💻 Desktop AI</span><span class="tag">📁 Local Files</span></div></div>
+      <div class="card-bottom"><span class="price">Claude Max · $100/mo</span></div>
     </div>
-
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════ -->
-<!--  9. AI DESIGN TOOLS                    -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-design" id="cat-design">
+<!-- ══════════════════════════════ CAT 9: DESIGN ══════════════════════════════ -->
+<section class="cat-section c9" id="cat9">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:#8338ec">Category 09</div>
-      <div class="cat-title">AI Design Tools</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 09</div>
+      <div class="cat-title"><span class="icon">🎯</span> AI Design Tools</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">Figma AI · Adobe Firefly</span></div>
+    <div class="cat-best">⭐ Best → <strong>Figma AI</strong> (UI/UX) · <strong>Canva AI</strong> (Non-designers)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student Design Tip</h4>
+      <p>Canva AI is free for students and makes stunning presentations, infographics &amp; social posts in minutes. Figma (also free for students via the Education plan!) is the industry-standard UI design tool.</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🎯</div><div class="card-name-group"><div class="card-name">Figma AI</div><div class="card-maker">Figma</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">AI features built directly into the world's leading UI design tool. Auto-generates layouts from prompts, rewrites copy, removes backgrounds, and suggests component variants. Indispensable for product designers.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">UI/UX design · Product teams · Prototyping</div></div>
+    <div class="tool-card c9 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🎯</div><div><div class="card-name">Figma AI</div><div class="card-maker">Figma</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best UI Design</span><span class="badge badge-free">Free for Students</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $15/mo Pro</span><span class="winner-badge">★ Best UI Design</span></div>
+      <p class="card-desc">AI features built into the world's leading UI design tool. Auto-generates layouts from prompts, rewrites copy &amp; suggests variants. Indispensable for design students &amp; product teams. Free Edu plan!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🖱️ UI/UX Design</span><span class="tag">📱 Prototyping</span><span class="tag">🆓 Free Edu Plan</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free (Education)</span> · $15/mo Pro</span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">✨</div><div class="card-name-group"><div class="card-name">Google Stitch</div><div class="card-maker">Google Labs</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Google's new AI UI generator that creates complete app interfaces from text descriptions. Free to use. Exports clean code. Rapidly closing the gap between idea and working prototype for developers.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">App UI generation · Developers · Free prototypes</div></div>
+    <div class="tool-card c9 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🅰️</div><div><div class="card-name">Canva AI</div><div class="card-maker">Canva</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best for Non-Designers</span><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Free (Labs)</span><span class="winner-badge">★ Best Free UI Gen</span></div>
+      <p class="card-desc">Magic Studio features: text-to-image, background remover, AI presentation builder &amp; magic resize. The ultimate tool for students who need polished visual content fast — zero design experience needed!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📊 Presentations</span><span class="tag">📱 Social Posts</span><span class="tag">🖼️ Infographics</span><span class="tag">🆓 Free Tier</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · $15/mo Pro</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🌐</div><div class="card-name-group"><div class="card-name">Wix AI</div><div class="card-maker">Wix</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Describe the website you want and Wix generates a complete draft with layout, copy, images, and a logo. Best for solo creators, freelancers, and small businesses wanting a professional site without a developer.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Small business sites · Portfolios · No-code</div></div>
+    <div class="tool-card c9">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">✨</div><div><div class="card-name">Google Stitch</div><div class="card-maker">Google Labs</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free (Labs)</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · From $17/mo</span></div>
+      <p class="card-desc">Google's new AI UI generator that creates complete app interfaces from text descriptions. Free to use &amp; exports clean code. Perfect for CS students bridging the gap between idea and working prototype.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">📱 App UI</span><span class="tag">💻 Code Export</span><span class="tag">🆓 Free</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free (Google Labs)</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🅰️</div><div class="card-name-group"><div class="card-name">Canva AI</div><div class="card-maker">Canva</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Magic Studio features inside Canva: text-to-image, background remover, AI presentation builder, magic resize, and brand kit enforcement. Best for non-designers creating polished content fast.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Social graphics · Presentations · Non-designers</div></div>
+    <div class="tool-card c9">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🌐</div><div><div class="card-name">Wix AI</div><div class="card-maker">Wix</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $15/mo Pro</span></div>
+      <p class="card-desc">Describe the website you want &amp; Wix generates a complete draft with layout, copy, images &amp; logo. Best for students building portfolio sites or small business projects without hiring a developer.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🌐 Portfolio Site</span><span class="tag">🚀 No-Code</span><span class="tag">💼 Small Business</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · From $17/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🏗️</div><div class="card-name-group"><div class="card-name">Framer AI</div><div class="card-maker">Framer</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Generate complete responsive websites from a prompt. AI copy writer, AI image generator, and animations built in. Publishes instantly. Best for startups and creators who want design-quality sites with zero code.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Startups · Landing pages · Design-quality sites</div></div>
+    <div class="tool-card c9">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🏗️</div><div><div class="card-name">Framer AI</div><div class="card-maker">Framer</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Free Tier</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-freemium">Free · $10/mo Mini</span></div>
+      <p class="card-desc">Generate complete responsive websites from a prompt. AI copy writer, image generator &amp; animations built in. Publishes instantly. Perfect for design students building stunning portfolio pieces.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🎨 Design Portfolio</span><span class="tag">🚀 Landing Pages</span><span class="tag">⚡ Instant Publish</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Free</span> · $10/mo Mini</span></div>
     </div>
-
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════ -->
-<!--  10. AI AGENTS PLATFORMS               -->
-<!-- ═══════════════════════════════════════ -->
-<div class="category-section cat-agents" id="cat-agents">
+<!-- ══════════════════════════════ CAT 10: AGENTS ══════════════════════════════ -->
+<section class="cat-section c10" id="cat10">
   <div class="cat-header">
-    <div class="cat-title-group">
-      <div class="cat-eyebrow" style="color:#ef233c">Category 10</div>
-      <div class="cat-title">AI Agent Platforms</div>
+    <div class="cat-meta">
+      <div class="cat-num">Category 10</div>
+      <div class="cat-title"><span class="icon">🤖</span> AI Agent Platforms</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div class="cat-count">5 tools</div>
-      <div class="cat-winner"><span class="cat-winner-label">🏆 BEST ›</span><span class="cat-winner-name">LangGraph (dev) · Perplexity Computer (pro)</span></div>
+    <div class="cat-best">⭐ Best → <strong>LangGraph</strong> (Developers) · <strong>CrewAI</strong> (Easy Setup)</div>
+  </div>
+  <div class="tip-box">
+    <span class="tip-icon">🎓</span>
+    <div class="tip-content">
+      <h4>Student AI Agent Tip</h4>
+      <p>LangGraph and CrewAI are both open-source and FREE! CS &amp; AI students should learn these — multi-agent AI is the future of software. Understanding agents now will make you highly employable in 2026 &amp; beyond.</p>
     </div>
   </div>
   <div class="tools-grid">
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🕸️</div><div class="card-name-group"><div class="card-name">LangGraph</div><div class="card-maker">LangChain</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Framework for building stateful, multi-agent workflows as graphs. Supervisor, hierarchical, and parallel agent architectures. Industry standard for production agent engineering in 2026.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">AI engineers · Production agents · Complex workflows</div></div>
+    <div class="tool-card c10 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🕸️</div><div><div class="card-name">LangGraph</div><div class="card-maker">LangChain · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Best Dev Framework</span><span class="badge badge-free">Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span><span class="winner-badge">★ Best Dev Framework</span></div>
+      <p class="card-desc">Framework for building stateful, multi-agent workflows as graphs. Industry standard for production agent engineering in 2026. CS students should learn this — it's the backbone of most AI agent startups!</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">👨‍💻 AI Engineering</span><span class="tag">🏗️ Production Agents</span><span class="tag">🆓 Open Source</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Open Source · Free</span></span></div>
     </div>
-
-    <div class="tool-card winner">
-      <div class="card-top"><div class="card-emoji">🖥️</div><div class="card-name-group"><div class="card-name">Perplexity Computer</div><div class="card-maker">Perplexity AI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Multi-agent system with 20+ models, 100s of connectors, and a dedicated Codex coding subagent. Available to all Pro subscribers. Comet handles multi-step workflows, calendar briefing, and research pipelines.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Pro users · Research pipelines · Multi-step tasks</div></div>
+    <div class="tool-card c10 featured">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">👥</div><div><div class="card-name">CrewAI</div><div class="card-maker">CrewAI · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-star">⭐ Easiest to Learn</span><span class="badge badge-free">Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">Perplexity Pro $20/mo</span><span class="winner-badge">★ Best Pro Agent</span></div>
+      <p class="card-desc">Framework for role-based multi-agent teams — each agent has a specialty (researcher, writer, coder). Easy to configure. Great for students who want to build AI pipelines without deep expertise.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🤖 Multi-Agent</span><span class="tag">📝 Content Pipelines</span><span class="tag">🆓 Free</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">Open Source · Free</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">👥</div><div class="card-name-group"><div class="card-name">CrewAI</div><div class="card-maker">CrewAI</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Framework for role-based multi-agent teams where each agent has a specialty (researcher, writer, coder, etc.). Easy to configure, great for content pipelines, research automation, and data workflows.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Role-based agents · Content pipelines · No-code config</div></div>
+    <div class="tool-card c10">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🖥️</div><div><div class="card-name">Perplexity Computer</div><div class="card-maker">Perplexity AI</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">Pro Plan</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span></div>
+      <p class="card-desc">Multi-agent system with 20+ models, 100s of connectors &amp; dedicated coding subagent. Comet handles multi-step workflows, research pipelines &amp; complex tasks. Best for advanced power users.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🔬 Research Pipelines</span><span class="tag">⚙️ Multi-Step Tasks</span><span class="tag">🤖 20+ Models</span></div></div>
+      <div class="card-bottom"><span class="price">Perplexity Pro · $20/mo</span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🏢</div><div class="card-name-group"><div class="card-name">Microsoft Agent 365</div><div class="card-maker">Microsoft</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Enterprise control plane for AI agents across M365, launched May 2026. Manages, monitors, and governs fleets of autonomous agents working in Word, Excel, Teams, and SharePoint. Requires E7 or E5+Copilot.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Enterprise · M365 teams · Agent governance</div></div>
+    <div class="tool-card c10">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🤝</div><div><div class="card-name">AutoGen</div><div class="card-maker">Microsoft Research · Open Source</div></div></div>
+        <div class="badge-wrap"><span class="badge badge-free">100% Free</span></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-paid">Enterprise · E7 plan</span></div>
+      <p class="card-desc">Open-source framework for multi-agent conversation. Agents debate, correct each other &amp; collaborate on complex tasks. Strong research community — perfect for AI research students &amp; thesis projects.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🔬 AI Research</span><span class="tag">🎓 Thesis Projects</span><span class="tag">🆓 Open Source</span></div></div>
+      <div class="card-bottom"><span class="price"><span class="free">100% Free · Open Source</span></span></div>
     </div>
-
-    <div class="tool-card">
-      <div class="card-top" style="background:var(--cream);"><div class="card-emoji">🤝</div><div class="card-name-group"><div class="card-name">AutoGen</div><div class="card-maker">Microsoft Research</div></div></div>
-      <div class="card-body">
-        <p class="card-desc">Open-source framework for multi-agent conversation. Agents debate, correct each other, and collaborate on complex tasks. Strong research community; flexible for experimental agent architectures.</p>
-        <div><div class="card-best-for">Best For</div><div class="card-use">Research · Debate agents · Experimental workflows</div></div>
+    <div class="tool-card c10">
+      <div class="card-top">
+        <div class="card-icon-name"><div class="card-emoji">🏢</div><div><div class="card-name">Microsoft Agent 365</div><div class="card-maker">Microsoft</div></div></div>
       </div>
-      <div class="card-footer"><span class="price-tag price-free">Open Source · Free</span></div>
+      <p class="card-desc">Enterprise control plane for AI agents across M365, launched June 2026. Manages &amp; governs fleets of autonomous agents working in Word, Excel, Teams &amp; SharePoint. Enterprise-focused.</p>
+      <div class="card-bestfor"><div class="bestfor-label">Best For Students</div><div class="bestfor-tags"><span class="tag">🏢 Enterprise Internships</span><span class="tag">📊 M365</span><span class="tag">👔 Corporate</span></div></div>
+      <div class="card-bottom"><span class="price">Enterprise · E7 Plan</span></div>
     </div>
-
   </div>
-</div>
+</section>
 
 </main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="logo">AiTechs_LVR</div>
-  <p>50+ AI Tools · 10 Categories · Best Per Category · Updated May 2026</p>
-  <p style="margin-top:8px;opacity:.3;">There are 4,000+ AI tools in existence. This guide covers the ones that matter.</p>
+<footer class="footer">
+  <div class="footer-inner">
+    <h3>🎓 AiTechs-LVR · Student AI Guide</h3>
+    <p>Verified AI tools across 10 categories, curated for students who want to learn, build, and create with AI.</p>
+    <p>Start with the free tools — there's more than enough to become AI-proficient without spending a cent.</p>
+    <div class="updated">Last updated: <span>June 2026</span> · 50+ tools reviewed · <span>10 categories</span></div>
+  </div>
 </footer>
 
 <script>
-// Filter logic
-function filterCat(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.category-section').forEach(s => {
-    if(cat === 'all' || s.id === cat) {
-      s.style.display = '';
-    } else {
-      s.style.display = 'none';
-    }
-  });
+// Smooth scroll navigation
+function scrollToSection(id) {
+  if (id === 'all') { window.scrollTo({top:0,behavior:'smooth'}); return; }
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
 }
 
-// Scroll reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible');
-      // Stagger child cards
-      e.target.querySelectorAll('.tool-card').forEach((c,i) => {
-        c.style.transitionDelay = (i * 0.07) + 's';
-        c.style.opacity = '1';
-        c.style.transform = 'translateY(0)';
-      });
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.tool-card');
+  const sections = document.querySelectorAll('.cat-section');
+  if (!q) {
+    cards.forEach(c => c.style.display = '');
+    sections.forEach(s => s.style.display = '');
+    return;
+  }
+  sections.forEach(sec => {
+    let anyVisible = false;
+    sec.querySelectorAll('.tool-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(q)) { card.style.display = ''; anyVisible = true; }
+      else card.style.display = 'none';
+    });
+    sec.style.display = anyVisible ? '' : 'none';
+  });
+});
+
+// Active nav on scroll
+const catSections = document.querySelectorAll('.cat-section');
+const navBtns = document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll', () => {
+  let current = '';
+  catSections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navBtns.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(current)) {
+      btn.classList.add('active');
     }
   });
-}, {threshold: 0.05});
-
-document.querySelectorAll('.category-section').forEach(s => {
-  // set cards to invisible initially
-  s.querySelectorAll('.tool-card').forEach(c => {
-    c.style.opacity = '0';
-    c.style.transform = 'translateY(20px)';
-    c.style.transition = 'opacity .5s, transform .5s, box-shadow .25s, border-color .25s';
-  });
-  observer.observe(s);
+  if (window.scrollY < 200) {
+    navBtns[0].classList.add('active');
+  }
 });
 </script>
 </body>
